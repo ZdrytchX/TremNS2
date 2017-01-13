@@ -8,8 +8,8 @@ local medpackHealthSound = PrecacheAsset("sound/NS2.fev/marine/common/health")
 local medpackHealthRequest = PrecacheAsset("sound/NS2.fev/marine/voiceovers/medpack")
 
 local function BuyMedpack(player)
-    if player and player:GetIsAlive() and kTechId.MedPack and
-    (not player.timeLastMedpack or player.timeLastMedpack + kMedpackPickupDelay <= Shared.GetTime()) then
+    if player then   --duplicated the 'if' for the fuckery spark engine error check
+      if kTechId.MedPack and player:GetIsAlive() and not player.timeLastMedpack or player.timeLastMedpack + kMedpackPickupDelay <= Shared.GetTime() then
 
       --Marine
           if  player:isa("Marine") and player:GetHealth() < player:GetMaxHealth() or player:GetArmor() < player:GetMaxArmor() then
@@ -22,7 +22,7 @@ local function BuyMedpack(player)
                 player.timeLastMedpack = Shared.GetTime()
                 StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
               else
-                StartSoundEffectOnEntity(medpackHealthRequest, player:GetOrigin())
+                StartSoundEffectOnEntity(medpackHealthRequest, player)
               end
 
         --Exosuits
@@ -32,9 +32,10 @@ local function BuyMedpack(player)
                 player.timeLastMedpack = Shared.GetTime() - (kMedpackPickupDelay / 2) --Shroten their regeneration limit because exos heal slowly
                 StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
               else
-                StartSoundEffectOnEntity(medpackHealthRequest, player:GetOrigin())
+                StartSoundEffectOnEntity(medpackHealthRequest, player)
               end
           end
+      end --medpack/alive check
     end
 
 end
