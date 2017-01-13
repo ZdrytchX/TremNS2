@@ -17,10 +17,10 @@ local function BuyMedpack(player)
               if player.resources > lMedpackUseCostDivision then
 
                 player.resources = player.resources - lMedpackUseCostDivision
+                player.timeLastMedpack = Shared.GetTime() - lMedpackUseCooldown
                 player:AddHealth(kMedpackHeal, false, true)
                 player:SetArmor(player:GetMaxArmor()) --kMedpackArmour is used for commander stuff, here we just set max armour
                 player:AddRegeneration()
-                player.timeLastMedpack = Shared.GetTime() + lMedpackUseCooldown
                 StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
               else
                 StartSoundEffectOnEntity(medpackHealthRequest, player)
@@ -30,7 +30,7 @@ local function BuyMedpack(player)
       elseif player:isa("Exo") and player:GetArmor() < player:GetMaxArmor() then
               if player.resources > kMedpackUseCost then
                 player:SetArmor(player:GetArmor() + kMedpackExo)
-                player.timeLastMedpack = Shared.GetTime() + kMedpackUseCooldown - kMedpackExoUseCooldown --Shroten their regeneration limit because exos heal slowly
+                player.timeLastMedpack = Shared.GetTime() - kMedpackExoUseCooldown --Shroten their regeneration limit because exos heal slowly
                 StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
               else
                 StartSoundEffectOnEntity(medpackHealthRequest, player)
