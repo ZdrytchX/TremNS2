@@ -3,7 +3,7 @@ RIGHT_MENU = 2
 kMaxRequestsPerSide = 6
 
 --buy medpack stuff, Nin's patch for SiegeSimple
-local healthCost = 50
+local healthCost = 100
 local medpackHealthSound = PrecacheAsset("sound/NS2.fev/marine/common/health")
 local medpackHealthRequest = PrecacheAsset("sound/NS2.fev/marine/voiceovers/medpack")
 
@@ -13,9 +13,10 @@ local function BuyMedpack(player)
 
       --Marine
           if  player:isa("Marine") and player:GetHealth() < player:GetMaxHealth() or player:GetArmor() < player:GetMaxArmor() then
-              if player.resources > healthCost then
+              local healthCostdivision = healthCost * player:GetHealth() / player:GetMaxHealth()
+              if player.resources > healthCostdivision then
 
-                player.resources = player.resources - healthCost
+                player.resources = player.resources - healthCostdivision
                 player:AddHealth(kMedpackHeal, false, true)
                 player:SetArmor(player:GetMaxArmor()) --kMedpackArmour is used for commander stuff
                 player:AddRegeneration()

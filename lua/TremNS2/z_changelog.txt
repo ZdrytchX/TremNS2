@@ -15,6 +15,9 @@ There is a cooldown of 10 seconds for medpack use so it cannot be spammed easily
 It is planned that instead of occuring a cost, a one-time use medpack that is restored
 at the armoury will be used similar to tremulous.
 
+Medpack cost from commander drop 2 -> 3
+Catpack cost 3 -> 5
+
 17-10-12
 Changed skulk pounce speed 10 -> 13
 Harvester Mature Health increased from 180 to 200 to help counter against one-hit grenade kills
