@@ -3,34 +3,34 @@ RIGHT_MENU = 2
 kMaxRequestsPerSide = 6
 
 --buy medpack stuff, Nin's patch for SiegeSimple
-local healthCost = 100
 local medpackHealthSound = PrecacheAsset("sound/NS2.fev/marine/common/health")
 local medpackHealthRequest = PrecacheAsset("sound/NS2.fev/marine/voiceovers/medpack")
 
 local function BuyMedpack(player)
     if player then   --duplicated the 'if' for the fuckery spark engine error check
-      if kTechId.MedPack and player:GetIsAlive() and not player.timeLastMedpack or player.timeLastMedpack + kMedpackPickupDelay <= Shared.GetTime() then
+      if kTechId.MedPack and player:GetIsAlive() and not player.timeLastMedpack or player.timeLastMedpack + kMedpackUseCooldown <= Shared.GetTime() then
 
       --Marine
           if  player:isa("Marine") and player:GetHealth() < player:GetMaxHealth() or player:GetArmor() < player:GetMaxArmor() then
-              local healthCostdivision = math.ceil(healthCost * math.max(1 - player:GetHealth() / player:GetMaxHealth(), 0.5)) --round up costs
-              if player.resources > healthCostdivision then
+              local lMedpackUseCostDivision = math.ceil(kMedpackUseCost * math.max(1 - player:GetHealth() / player:GetMaxHealth(), 0.5)) --round up costs
+              local lMedpackUseCooldown = kMedpackUseCooldown * player:GetHealth() / player:GetMaxHealth() * 0.75
+              if player.resources > lMedpackUseCostDivision then
 
-                player.resources = player.resources - healthCostdivision
+                player.resources = player.resources - lMedpackUseCostDivision
                 player:AddHealth(kMedpackHeal, false, true)
-                player:SetArmor(player:GetMaxArmor()) --kMedpackArmour is used for commander stuff
+                player:SetArmor(player:GetMaxArmor()) --kMedpackArmour is used for commander stuff, here we just set max armour
                 player:AddRegeneration()
-                player.timeLastMedpack = Shared.GetTime()
+                player.timeLastMedpack = Shared.GetTime() + lMedpackUseCooldown
                 StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
               else
                 StartSoundEffectOnEntity(medpackHealthRequest, player)
               end
 
-        --Exosuits
+        --Exosuits, not used yet
       elseif player:isa("Exo") and player:GetArmor() < player:GetMaxArmor() then
-              if player.resources > healthCost then
+              if player.resources > kMedpackUseCost then
                 player:SetArmor(player:GetArmor() + kMedpackExo)
-                player.timeLastMedpack = Shared.GetTime() - (kMedpackPickupDelay / 2) --Shroten their regeneration limit because exos heal slowly
+                player.timeLastMedpack = Shared.GetTime() + kMedpackUseCooldown - kMedpackExoUseCooldown --Shroten their regeneration limit because exos heal slowly
                 StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
               else
                 StartSoundEffectOnEntity(medpackHealthRequest, player)

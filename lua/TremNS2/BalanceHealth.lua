@@ -28,9 +28,14 @@ kArmorHealScalar = 1 -- 0.75
 --Medpack
 kMedpackHeal = 1--25
 kMedpackArmour = 59--29
-kMedpackExo = 80--marine maximum equivalent = 80hp
-kMedpackPickupDelay = 10 --0.45
+kMedpackExo = 160
+kMedpackPickupDelay = 0.25 --0.45
 kMarineRegenerationHeal = 100 --Amount of hp extra over 0.45s
+
+--Personal Use medpacks
+kMedpackUseCooldown = 20--Delay between using medpacks
+kMedpackUseCost = 100
+kMedpackExoUseCooldown = 8
 --unused and TODO: kMarineRegenerationTime = 9
 
 --Calculate values + armour minus 5 points for base reward
