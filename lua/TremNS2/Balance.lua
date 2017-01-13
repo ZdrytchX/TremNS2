@@ -645,9 +645,9 @@ kPowerSurgeDamageRadius = 6
 kPowerSurgeElectrifiedDuration = 6
 
 kAmmoPackCost = 1
-kMedPackCost = 2
+kMedPackCost = 3
 kMedPackCooldown = 2
-kCatPackCost = 3
+kCatPackCost = 5
 kCatPackMoveAddSpeed = 1.2 --1.25
 kCatPackWeaponSpeed = 1.5
 kCatPackDuration = 10--12
