@@ -38,7 +38,7 @@ kMarineComBrainActions =
     CreateUpgradeStructureAction( kTechId.HeavyMachineGunTech   , 1.0+math.random() ) ,
     CreateUpgradeStructureAction( kTechId.GrenadeTech           , 1.0+math.random() ) ,
 
-    CreateUpgradeStructureAction( kTechId.PhaseTech , 2.0+math.random() ),-- this wasn't here
+    --CreateUpgradeStructureAction( kTechId.PhaseTech , 2.0+math.random() ),-- this wasn't here
 
     CreateUpgradeStructureAction( kTechId.Weapons1 , 3.0+math.random() ) ,
     CreateUpgradeStructureAction( kTechId.Weapons2 , 2.0+math.random() ) ,
