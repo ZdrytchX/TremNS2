@@ -1,0 +1,146 @@
+Changelog starts from the bottom with the date:16-12-17
+
+17-10-12
+Changed skulk pounce speed 10 -> 13
+Harvester Mature Health increased from 180 to 200 to help counter against one-hit grenade kills
+Shell Mature health increased 100 -> 180
+Veil cost 10 -> 7
+Spur cost unchanged (10)
+Shell cost 10 -> 13
+Whip slap damage 80 -> 60
+Drifter build time 4 -> 10 since it is used too easily
+Harvester build time 30 -> 20 since resource point control isn't as important anymore
+Extractor total health still 650, but the ratio has been changed to allow skulks to kill them a little faster:
+240 -> 280hp, 205 -> 185 armour
+Tunnel Entrance mature health increased 350 -> 380 so it doesn't die in two rifle clips
+Tunnel entrance point value 5 -> 15 (effects scores only)
+
+Game ender research adjusted because marine weapon upgrades are expensive:
+Xenocide research cost 5 -> 35
+Stab 2 -> 32
+Bone shield 2 -> 42
+Spores  2 -> 22
+Stomp 2 -> 32
+Total: increase in 150 res required
+
+17-01-10
+ARC supply / metal cost increased 15 -> 20
+ARC range 26 -> 20m
+ARC damage 70 -> 60 (still doubled vs structures)
+ARC minimum fire range increased 1 -> 2 (NS2: 7)
+Sentry build time 10 -> 8s
+Extractor build time 8s -> 7s
+Nano Shield time 5 -> 10s
+Nano Shield cooldown 10 -> 20s
+Jetpack Research 9s -> 15s
+Fade Stab range 30m -> 40m
+Shotgun Inner Octogon ring radius reduced from 0.5 to 0.35 to help chase against fades, since fades are generally smaller than dragoons
+Shotgun Spread Increased in general 8.5 -> 7.5
+Pistol Max clips increased 9 -> 30
+Power Point overall health still the same (930), but health and armour values changed to allow skulks to destroy them faster:
+-Health 310 -> 430
+-Armour 310 -> 250
+Skulk parasite damage increased 5->8 to assist with killing level 2 armoured marines
+Skulk Parasite energy cost increased back to ns2 default value 20->30
+Babbler damage increased 20 ->24
+Babbler damage type changed to normal, so it doesn't deal double damage vs structures
+Babbler Egg cost 100 -> 200
+Grorge Healspreay energy cost increased 12 -> 15
+
+Patched in Nin's FixedTimestepMovement mod
+
+16-12-31
+Adjusted chat spam filter to 1 second intervals (was 3 seconds), however has a penalty of 5 seconds.
+///debugspeed is now enabled by default/// Cancelled due to the weird engine's coding, not that it is important anyway
+Debugspeed values now suffixed with a unit and has a differnet coloured bar
+Debugspeed now isn't scaled based off player class max speed, but just pure speed
+Debugspeed now has reference bars to show 0, 5, 10, 15, 20, 25, 30 speeds
+Debugspeed now has a Q3 unit convertor
+Debugspeed shouldn't now be as obscuring and shouldn't be blocked by ns1 hud style bars
+Debugspeed is now sexy
+Fixed Gorge's movement
+Adjusted ground friction of classes effected by CPM/VQ3 physics. This should allow cirlce jumps
+
+
+16-12-28
+Finished off CPM air physics for skulk
+Set fragvalue back to 100c
+Fixed alien upgrade rewards being abnormally high
+Changed sentry health from 190/0 to 70/60 (both are still 190 helath equivalent)
+Powernode health reduced 930/310 -> 310/310 to be fair on how tweak cysts are, and 930 represents reactor health in Tremulous
+ARC health (move mode) reduced 380/380 -> 210/380
+Shade health 180 -> 160
+Craig mature armour 0 -> 20 so it doesn't die in one rifle clip
+ARC upgraded robotics factory health decreased 280 -> 200
+Tunnel Mature health increased 125 -> 350
+
+16-12-28
+Q3 STYLE STRAFE JUMPS!!!
+Now available on: Onos, Marine, Player (Spectator/Readyroom marine guy), Skulk, Fade and Gorge
+Acceleration inconsistancy bug fixed with the aid of Brute
+ARC cost increased back to 20 from 16
+Fixed onos/spec guy air control still being active and added q3 physics to jetpack
+Attempted Fix on GL's knockback
+
+16-12-27
+Lerkbite energy cost reduced 5 -> 4
+ARC deployed health 250 -> 210
+Adjusted lerk flight values
+
+
+16-12-26
+ARC costs reduced 20 -> 16
+ARC deployed health/armour: deployed 300/0 -> 250/0 activated 300/300 -> 380/380
+Pistol Buffs:
+  Clipsize 99 -> 7 (63 damage/clip, enough to kill a low biomass lerk in one clip)
+  Repeat Rate 0.6 -> 0.25 (~1.6 to 4 bullets/second)
+  Spread 0 -> 1 degrees
+  Clips 1 -> 9
+  Overall DPS including reload: 16 dps (previously 15 dps, tremulous had 12.8)
+ARC targetting cysts error undone
+ARC targetting bug fixed
+Removed unused asset
+Hallucination 50% -> 25% health (ns2 = 20% health)
+
+
+16-12-21
+Contamination given a little bit of amrour due to its massive cooldown
+Hydras now deal more damage (15 -> 40) because they die so easily / countered with gas grenade
+ARC costs increased 12 -> 20
+Shifting Whips increased 2 -> 3
+HMG/LMG research cost decreased 20->5
+Jetpack research cost reduced  25 -> 20
+Exosuit research increased 30 -> 35
+LMG (HMG) spread increased back from 0 to 10 (default ns2 = 8)
+
+16-12-19
+Added detection if a commander is existing or not to the resource tick rate ratio system. Commanders are now worth 2 players fo the ratio calculation.
+Lerk speed adjusted so it can fly faster by flapping but will glide at approx the same speed (desired: 12.5 actual: 14)
+Lerk speed adjusted again so it flies closer to the desired speed of 12.8
+fixed Groge's and Lerk's attack rate
+LMG's research reverted due to the bug where it became unpurchasable
+Flamethrower's clip reduced 150 -> 100 (gpp had the largest clip size but even still only had 200 total shots. Clips required for commander's ammo drop to work)
+
+16-12-18
+TRes per kill reduced 5->$
+Alien Tech map fixed (Fade is now in biomass 3)
+Marine Command Research line removed HMG, HMG now auto reseraches with advance armoury. Cost of various equipement research increased.
+Marine Armour reserach costs of Armour 2: 30 -> 25 and Armour 3: 40 -> 45
+Marine Jump stamina equired reduced from 0.5 to 0.3
+Increased contamination cost 5 -> 15
+Decreased jump stamina requirement again 0.3 -> 0.25
+Decreased speed limitation 0.2 -> 0.125
+MAC/Drifter scan range increased 20 -> 30m
+
+
+16-12-17:
+Medpack cooldown increased to 2 seconds
+Nutrient Mist cost increased 2->3 res and cooldown 2->5s due to it being powerful with building structures quickly
+Mucous shield cooldown increased 5->10s because it stops 50% of damage for 5 seconds
+Halucination cooldown increased 3s->10s
+Basic Lerk cost decreased 375 -> 275 (cost ranges between 1.375 and 2.5 evos)
+Medpack on Exosuits fixed
+Medpack on Exosuits gives 80 armour
+Medpack armor to marines now rewards 15 -> 30 armour (29.25 = quarter of 117, which means total equivalent health is increased by up to 50%). May be a little OP however.
+Stamina before slowing down increased from 4/12 -> 6/12 seconds
+Added jump modifier

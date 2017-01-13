@@ -1,0 +1,4 @@
+modEntry = {
+	FileHooks = "lua/TremNS2/FileHooks.lua",
+	Priority = 9
+}
