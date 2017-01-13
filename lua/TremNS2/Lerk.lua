@@ -43,7 +43,7 @@ function Lerk:GetAirAcceleration()
 end
 --0.717 0.027
 function Lerk:GetAirFriction()
-    return 0.717 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.035--0.08 0.055 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.009
+    return 0.5 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.035--0.08 0.055 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.009
 end
 
 local function UpdateGlide(self, input, velocity, deltaTime)
