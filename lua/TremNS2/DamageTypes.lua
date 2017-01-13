@@ -26,8 +26,9 @@ kHealthPointsPerArmor = 2
 kHeavyHealthPerArmor = 1
 
 kFlameableMultiplier = 1.5--1.125
-kCorrodeDamagePlayerArmorScalar = 0.2--0.12
-kCorrodeDamageExoArmorScalar = 0.2--0.4
+--bile bomb modifiers
+kCorrodeDamagePlayerArmorScalar = 0.5--0.12
+kCorrodeDamageExoArmorScalar = 0.5--0.4
 
 kStructureLightHealthPerArmor = 9
 kStructureLightArmorUseFraction = 0.9
