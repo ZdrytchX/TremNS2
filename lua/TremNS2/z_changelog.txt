@@ -1,5 +1,20 @@
 Changelog starts from the bottom with the date:16-12-17
 
+17-10-13
+Marine flashlight changed to a more orangey colour and renders up to 25m instead of 15m
+Bile bomb vs players 0.2 -> 0.5 (ns2 = 0.12)
+Bile bomb vs Exos 0.2 -> 0.5 (ns2 = 0.4) (exo will have 30armour left after 3 biles)
+Stop friction now scaled on player class' acceleration values(skulk has higher friction than gorge for example)
+Remove phase tech from bot research priorities
+
+Medpack Changes:
+Refilehooked voiceover.lua and whited out the Come'On! taunt sound since i need to pack that sound properly
+Voiceover also uses Nin's medpack patch for SiegeSimple, however it is modified
+so it will request a medpack anyway if the user is low on resourceselse it will say nothing.
+There is a cooldown of 10 seconds for medpack use so it cannot be spammed easily.
+It is planned that instead of occuring a cost, a one-time use medpack that is restored
+at the armoury will be used similar to tremulous.
+
 17-10-12
 Changed skulk pounce speed 10 -> 13
 Harvester Mature Health increased from 180 to 200 to help counter against one-hit grenade kills

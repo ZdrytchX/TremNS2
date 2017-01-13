@@ -26,11 +26,11 @@ kExosuitArmorPerUpgradeLevel = 0--30
 kArmorHealScalar = 1 -- 0.75
 
 --Medpack
-kMedpackHeal = 10--25
+kMedpackHeal = 1--25
 kMedpackArmour = 59--29
 kMedpackExo = 80--marine maximum equivalent = 80hp
-kMedpackPickupDelay = 1 --0.45
-kMarineRegenerationHeal = 90 --Amount of hp extra over 0.45s
+kMedpackPickupDelay = 10 --0.45
+kMarineRegenerationHeal = 100 --Amount of hp extra over 0.45s
 --unused and TODO: kMarineRegenerationTime = 9
 
 --Calculate values + armour minus 5 points for base reward
