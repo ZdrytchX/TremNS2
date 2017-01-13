@@ -13,7 +13,7 @@ local function BuyMedpack(player)
 
       --Marine
           if  player:isa("Marine") and player:GetHealth() < player:GetMaxHealth() or player:GetArmor() < player:GetMaxArmor() then
-              local healthCostdivision = healthCost * player:GetHealth() / player:GetMaxHealth()
+              local healthCostdivision = healthCost * math.max(1 - player:GetHealth() / player:GetMaxHealth(), 0.5)
               if player.resources > healthCostdivision then
 
                 player.resources = player.resources - healthCostdivision
