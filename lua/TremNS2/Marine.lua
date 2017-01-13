@@ -45,8 +45,8 @@ Marine.kFindWeaponRange = 2
 Marine.kPickupWeaponTimeLimit = 1
 Marine.kPickupPriority = { [kTechId.Flamethrower] = 1, [kTechId.GrenadeLauncher] = 2, [kTechId.Shotgun] = 3 }
 
-Marine.kAcceleration = 100
-Marine.kSprintAcceleration = 120 -- 70
+Marine.kAcceleration = 10
+Marine.kSprintAcceleration = 12 -- 70
 Marine.kSprintInfestationAcceleration = 60
 
 Marine.kGroundFrictionForce = 10--16
@@ -54,6 +54,83 @@ Marine.kGroundFrictionForce = 10--16
 Marine.kAirStrafeWeight = 2
 --local   lJumpStaminaReduction = 4
 local   lJumpStaminaRequirement = 0.25
+
+--give self.medpackused
+function Marine:OnCreate()
+
+    InitMixin(self, BaseMoveMixin, { kGravity = Player.kGravity })
+    InitMixin(self, GroundMoveMixin)
+    InitMixin(self, JumpMoveMixin)
+    InitMixin(self, CrouchMoveMixin)
+    InitMixin(self, LadderMoveMixin)
+    InitMixin(self, CameraHolderMixin, { kFov = kDefaultFov })
+    InitMixin(self, MarineActionFinderMixin)
+    InitMixin(self, ScoringMixin, { kMaxScore = kMaxScore })
+    InitMixin(self, VortexAbleMixin)
+    InitMixin(self, CombatMixin)
+    InitMixin(self, SelectableMixin)
+
+    Player.OnCreate(self)
+
+    InitMixin(self, DissolveMixin)
+    InitMixin(self, LOSMixin)
+    InitMixin(self, ParasiteMixin)
+    InitMixin(self, RagdollMixin)
+    InitMixin(self, WebableMixin)
+    InitMixin(self, CorrodeMixin)
+    InitMixin(self, TunnelUserMixin)
+    InitMixin(self, PhaseGateUserMixin)
+    InitMixin(self, PredictedProjectileShooterMixin)
+    InitMixin(self, MarineVariantMixin)
+
+    InitMixin(self, RegenerationMixin)
+
+    if Server then
+
+        self.timePoisoned = 0
+        self.poisoned = false
+
+        -- stores welder / builder progress
+        self.unitStatusPercentage = 0
+        self.timeLastUnitPercentageUpdate = 0
+
+		    self.grenadesLeft = 0
+		    self.grenadeType = nil
+
+    elseif Client then
+
+        self.flashlight = Client.CreateRenderLight()
+
+        self.flashlight:SetType( RenderLight.Type_Spot )
+        self.flashlight:SetColor( Color(1, .9, .8) ) --0.8 0.8 1
+        self.flashlight:SetInnerCone( math.rad(30) ) --30
+        self.flashlight:SetOuterCone( math.rad(40) ) --35
+        self.flashlight:SetIntensity( 10 )
+        self.flashlight:SetRadius( 25 ) --distance
+        self.flashlight:SetGoboTexture("models/marine/male/flashlight.dds")
+
+        self.flashlight:SetIsVisible(false)
+
+        InitMixin(self, TeamMessageMixin, { kGUIScriptName = "GUIMarineTeamMessage" })
+
+        InitMixin(self, DisorientableMixin)
+
+    end
+
+    self.weaponDropTime = 0
+    self.timeLastSpitHit = 0
+    self.lastSpitDirection = Vector(0, 0, 0)
+    self.timeOfLastDrop = 0
+    self.timeOfLastPickUpWeapon = 0
+    self.ruptured = false
+    self.interruptAim = false
+    self.catpackboost = false
+    self.timeCatpackboost = 0
+    self.flashlightLastFrame = false
+    self.weaponBeforeUseId = Entity.invalidId
+    --self.medpackused = 0
+end
+
 
 function Marine:GetGroundFriction()
     return 6

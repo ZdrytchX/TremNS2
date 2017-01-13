@@ -25,7 +25,7 @@ function Gorge:GetMaxSpeed(possible)
 end
 
 function Gorge:GetAcceleration()
-    return self:GetIsBellySliding() and 0 or 8
+    return self:GetIsBellySliding() and 0 or 8 --8
 end
 
 function Gorge:GetGroundFriction()

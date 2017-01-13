@@ -346,7 +346,7 @@ function GroundMoveMixin:GetFriction(input, velocity)
     -- use minimum friction when on ground
     --if input.move:GetLength() == 0 and self.onGround and velocity:GetLength() < kStopSpeed then
     if self.onGround --[[and velocity:GetLength() < kStopSpeed]] then
-        frictionScalar = math.max(kStopFriction, frictionScalar)
+        frictionScalar = math.max(kStopFriction * self:GetAcceleration() / 10, frictionScalar)
     end
 
     return friction * frictionScalar
