@@ -1,40 +1,42 @@
--- ======= Copyright (c) 2003-2011, Unknown Worlds Entertainment, Inc. All rights reserved. =======
---
--- lua\VoiceOver.lua
---
--- Created by: Andreas Urwalek (andi@unknownworlds.com)
---
--- ========= For more information, visit us at http://www.unknownworlds.com =====================
-
 LEFT_MENU = 1
 RIGHT_MENU = 2
 kMaxRequestsPerSide = 6
 
-kVoiceId = enum ({
+--buy medpack stuff, Nin's patch for SiegeSimple
+local healthCost = 50
+local medpackHealthSound = PrecacheAsset("sound/NS2.fev/marine/common/health")
+local medpackHealthRequest = PrecacheAsset("sound/NS2.fev/marine/voiceovers/medpack")
 
-    'None', 'VoteEject', 'VoteConcede', 'Ping',
+local function BuyMedpack(player)
+    if player and player:GetIsAlive() and kTechId.MedPack and
+    (not player.timeLastMedpack or player.timeLastMedpack + kMedpackPickupDelay <= Shared.GetTime()) then
 
-    'RequestWeld', 'MarineRequestMedpack', 'MarineRequestAmmo', 'MarineRequestOrder',
-    'MarineTaunt', 'MarineTauntExclusive', 'MarineCovering', 'MarineFollowMe', 'MarineHostiles', 'MarineLetsMove', 'MarineAcknowledged',
+      --Marine
+          if  player:isa("Marine") and player:GetHealth() < player:GetMaxHealth() or player:GetArmor() < player:GetMaxArmor() then
+              if player.resources > healthCost then
 
-    'AlienRequestHarvester', 'AlienRequestHealing', 'AlienRequestMist', 'AlienRequestDrifter',
-    'AlienTaunt', 'AlienFollowMe', 'AlienChuckle', 'EmbryoChuckle',
+                player.resources = player.resources - healthCost
+                player:AddHealth(kMedpackHeal, false, true)
+                player:SetArmor(player:GetMaxArmor()) --kMedpackArmour is used for commander stuff
+                player:AddRegeneration()
+                player.timeLastMedpack = Shared.GetTime()
+                StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
+              else
+                StartSoundEffectOnEntity(medpackHealthRequest, player:GetOrigin())
+              end
 
+        --Exosuits
+      elseif player:isa("Exo") and player:GetArmor() < player:GetMaxArmor() then
+              if player.resources > healthCost then
+                player:SetArmor(player:GetArmor() + kMedpackExo)
+                player.timeLastMedpack = Shared.GetTime() - (kMedpackPickupDelay / 2) --Shroten their regeneration limit because exos heal slowly
+                StartSoundEffectAtOrigin(medpackHealthSound, player:GetOrigin())
+              else
+                StartSoundEffectOnEntity(medpackHealthRequest, player:GetOrigin())
+              end
+          end
+    end
 
-})
-
-local kAlienTauntSounds =
-{
-    [kTechId.Skulk] = "sound/NS2.fev/alien/voiceovers/chuckle",
-    [kTechId.Gorge] = "sound/NS2.fev/alien/gorge/taunt",
-    [kTechId.Lerk] = "sound/NS2.fev/alien/lerk/taunt",
-    [kTechId.Fade] = "sound/NS2.fev/alien/fade/taunt",
-    [kTechId.Onos] = "sound/NS2.fev/alien/onos/taunt",
-    [kTechId.Embryo] = "sound/NS2.fev/alien/common/swarm",
-    [kTechId.ReadyRoomEmbryo] = "sound/NS2.fev/alien/common/swarm",
-}
-for _, tauntSound in pairs(kAlienTauntSounds) do
-    PrecacheAsset(tauntSound)
 end
 
 local function VoteEjectCommander(player)
@@ -110,11 +112,13 @@ local kSoundData =
 
     -- marine vote menu
     [kVoiceId.RequestWeld] = { Sound = "sound/NS2.fev/marine/voiceovers/weld", Function = GiveWeldOrder, Description = "REQUEST_MARINE_WELD", KeyBind = "RequestWeld", AlertTechId = kTechId.None },
-    [kVoiceId.MarineRequestMedpack] = { Sound = "sound/NS2.fev/marine/voiceovers/medpack", Description = "REQUEST_MARINE_MEDPACK", KeyBind = "RequestHealth", AlertTechId = kTechId.MarineAlertNeedMedpack },
+    [kVoiceId.MarineRequestMedpack] = {Function = BuyMedpack, Description = "Buy Medpack", KeyBind = "RequestHealth", AlertTechId = kTechId.MarineAlertNeedMedpack },
+    --[kVoiceId.MarineRequestMedpack] = { Sound = "sound/NS2.fev/marine/voiceovers/medpack", Description = "REQUEST_MARINE_MEDPACK", KeyBind = "RequestHealth", AlertTechId = kTechId.MarineAlertNeedMedpack },
     [kVoiceId.MarineRequestAmmo] = { Sound = "sound/NS2.fev/marine/voiceovers/ammo", Description = "REQUEST_MARINE_AMMO", KeyBind = "RequestAmmo", AlertTechId = kTechId.MarineAlertNeedAmmo },
     [kVoiceId.MarineRequestOrder] = { Sound = "sound/NS2.fev/marine/voiceovers/need_orders", Description = "REQUEST_MARINE_ORDER",  KeyBind = "RequestOrder", AlertTechId = kTechId.MarineAlertNeedOrder },
 
-    [kVoiceId.MarineTaunt] = { Sound = "sound/human/taunt.wav", Description = "REQUEST_MARINE_TAUNT", KeyBind = "Taunt", AlertTechId = kTechId.None },
+--Apparently ns2 doesn't like raw files, they need to be packed properly to fade out with distance
+    [kVoiceId.MarineTaunt] = { Sound = --[["sound/human/taunt.wav"]]"sound/NS2.fev/marine/voiceovers/taunt", Description = "REQUEST_MARINE_TAUNT", KeyBind = "Taunt", AlertTechId = kTechId.None },
     [kVoiceId.MarineTauntExclusive] = { Sound = "sound/NS2.fev/marine/voiceovers/taunt_exclusive", Description = "REQUEST_MARINE_TAUNT", KeyBind = "Taunt", AlertTechId = kTechId.None },
     [kVoiceId.MarineCovering] = { Sound = "sound/NS2.fev/marine/voiceovers/covering", Description = "REQUEST_MARINE_COVERING", KeyBind = "VoiceOverCovering", AlertTechId = kTechId.None },
     [kVoiceId.MarineFollowMe] = { Sound = "sound/NS2.fev/marine/voiceovers/follow_me", Description = "REQUEST_MARINE_FOLLOWME", KeyBind = "VoiceOverFollowMe", AlertTechId = kTechId.None },
@@ -243,7 +247,3 @@ if Client then
     end
 
 end
-
-
-local kAutoMarineVoiceOvers = {}
-local kAutoAlienVoiceOvers = {}

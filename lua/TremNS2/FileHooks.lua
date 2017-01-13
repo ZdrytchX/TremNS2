@@ -109,8 +109,8 @@ ModLoader.SetupFileHook( "lua/GUISpeedDebug.lua", "lua/TremNS2/HUD/GUISpeedDebug
 --ModLoader.SetupFileHook( "lua/DamageEffects.lua", "lua/TremNS2/Sound/DamageEffects.lua", "post" ) XXX
 --ModLoader.SetupFileHook( "lua/PlayerEffects.lua", "lua/TremNS2/Sound/PlayerEffects.lua", "post" ) XXX
 
---Come'on! replacement taunt
---ModLoader.SetupFileHook( "lua/VoiceOver.lua", "lua/TremNS2/Sound/VoiceOver.lua", "post" )
+--Come'on! replacement taunt + give medpack ability
+ModLoader.SetupFileHook( "lua/VoiceOver.lua", "lua/TremNS2/Sound/VoiceOver.lua", "post" )
 
 ----------------
 --Bots
