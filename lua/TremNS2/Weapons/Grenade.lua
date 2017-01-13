@@ -64,6 +64,7 @@ if Server then
             local velocity = ltarget:GetVelocity() + offset * pushscale
                 ltarget:SetVelocity(velocity)
 
+                --FIXME: GetIsOnGround searches through hives somehow
             if ltarget:GetIsOnGround() then
               ltarget.onGround = false
             end
