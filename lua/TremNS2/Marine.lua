@@ -102,7 +102,7 @@ function Marine:OnCreate()
         self.flashlight = Client.CreateRenderLight()
 
         self.flashlight:SetType( RenderLight.Type_Spot )
-        self.flashlight:SetColor( Color(1, .9, .8) ) --0.8 0.8 1
+        self.flashlight:SetColor( Color(1, .8, .6) ) --0.8 0.8 1
         self.flashlight:SetInnerCone( math.rad(30) ) --30
         self.flashlight:SetOuterCone( math.rad(40) ) --35
         self.flashlight:SetIntensity( 10 )
