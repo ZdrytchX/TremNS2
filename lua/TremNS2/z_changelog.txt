@@ -2,7 +2,14 @@ Changelog starts from the bottom with the date:16-12-17
 
 17-10-15
 Fixed alien taunt error
+Infantry Portal effective health halved: Armour 310 -> 78
+OBS health/armour ratio changed from 150 / 50 (250 effective health) to 100/75 so it is more resistant against skulks
+Marine Torch light change experimental:
+-colour changed to nearly pure red (simulate night time torches, RGB = 1/.1/0)
+-Distance 25 -> 32 (ns2 = 15
+-Intensity 10 -> 16)
 
+17-10-13
 Marine flashlight changed to a more orangey colour and renders up to 25m instead of 15m
 Bile bomb vs players 0.2 -> 0.5 (ns2 = 0.12)
 Bile bomb vs Exos 0.2 -> 0.5 (ns2 = 0.4) (exo will have 30armour left after 3 biles)

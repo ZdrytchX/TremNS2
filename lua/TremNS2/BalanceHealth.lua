@@ -85,12 +85,12 @@ kStartHealthScalar = 0.1--0.3
 kArmoryHealth = 380    kArmoryArmor = 380    kArmoryPointValue = 5
 kAdvancedArmoryHealth = 420    kAdvancedArmoryArmor = 420    kAdvancedArmoryPointValue = 10
 kCommandStationHealth = 930    kCommandStationArmor = 930    kCommandStationPointValue = 20
-kObservatoryHealth = 150    kObservatoryArmor = 50    kObservatoryPointValue = 10
+kObservatoryHealth = 100    kObservatoryArmor = 75    kObservatoryPointValue = 10
 kPhaseGateHealth = 190    kPhaseGateArmor = 190    kPhaseGatePointValue = 10
 kRoboticsFactoryHealth = 200    kRoboticsFactoryArmor = 60    kRoboticsFactoryPointValue = 5
 kARCRoboticsFactoryHealth = 200    kARCRoboticsFactoryArmor = 280    kARCRoboticsFactoryPointValue = 7
 kPrototypeLabHealth = 250    kPrototypeLabArmor = 250    kPrototypeLabPointValue = 15
-kInfantryPortalHealth = 310    kInfantryPortalArmor = 310    kInfantryPortalPointValue = 10
+kInfantryPortalHealth = 310    kInfantryPortalArmor = 78    kInfantryPortalPointValue = 10
 kArmsLabHealth = 800    kArmsLabArmor = 900    kArmsLabPointValue = 25
 kSentryBatteryHealth = 750    kSentryBatteryArmor = 50    kSentryBatteryPointValue = 5
 
