@@ -9,6 +9,9 @@ Marine Torch light change experimental:
 -Distance 25 -> 32 (ns2 = 15
 -Intensity 10 -> 16)
 
+-Colour changed to pure read (RGB = 1/0/0)
+-Intensity reduced 16 -> 12
+
 17-10-13
 Marine flashlight changed to a more orangey colour and renders up to 25m instead of 15m
 Bile bomb vs players 0.2 -> 0.5 (ns2 = 0.12)

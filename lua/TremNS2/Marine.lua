@@ -102,10 +102,10 @@ function Marine:OnCreate()
         self.flashlight = Client.CreateRenderLight()
 
         self.flashlight:SetType( RenderLight.Type_Spot )
-        self.flashlight:SetColor( Color(1, .1, 0) ) --0.8 0.8 1 // before 1 .7 .6
+        self.flashlight:SetColor( Color(1, 0, 0) ) --0.8 0.8 1 // before 1 .7 .6
         self.flashlight:SetInnerCone( math.rad(35) ) --30
         self.flashlight:SetOuterCone( math.rad(40) ) --35
-        self.flashlight:SetIntensity( 16 ) --10
+        self.flashlight:SetIntensity( 12 ) --10
         self.flashlight:SetRadius( 32 ) --distance 15
         self.flashlight:SetGoboTexture("models/marine/male/flashlight.dds")
 
