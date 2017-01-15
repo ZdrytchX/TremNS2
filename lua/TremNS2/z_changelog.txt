@@ -1,11 +1,15 @@
 Changelog starts from the bottom with the date:16-12-17
 
-17-10-13
+17-10-15
+Fixed alien taunt error
+
 Marine flashlight changed to a more orangey colour and renders up to 25m instead of 15m
 Bile bomb vs players 0.2 -> 0.5 (ns2 = 0.12)
 Bile bomb vs Exos 0.2 -> 0.5 (ns2 = 0.4) (exo will have 30armour left after 3 biles)
 Stop friction now scaled on player class' acceleration values(skulk has higher friction than gorge for example)
 Remove phase tech from bot research priorities
+
+Lerk air friction reduced 0.707 -> 0.5
 
 Medpack Changes:
 Refilehooked voiceover.lua and whited out the Come'On! taunt sound since i need to pack that sound properly

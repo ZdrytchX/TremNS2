@@ -2,6 +2,20 @@ LEFT_MENU = 1
 RIGHT_MENU = 2
 kMaxRequestsPerSide = 6
 
+local kAlienTauntSounds =
+{
+    [kTechId.Skulk] = "sound/NS2.fev/alien/voiceovers/chuckle",
+    [kTechId.Gorge] = "sound/NS2.fev/alien/gorge/taunt",
+    [kTechId.Lerk] = "sound/NS2.fev/alien/lerk/taunt",
+    [kTechId.Fade] = "sound/NS2.fev/alien/fade/taunt",
+    [kTechId.Onos] = "sound/NS2.fev/alien/onos/taunt",
+    [kTechId.Embryo] = "sound/NS2.fev/alien/common/swarm",
+    [kTechId.ReadyRoomEmbryo] = "sound/NS2.fev/alien/common/swarm",
+}
+for _, tauntSound in pairs(kAlienTauntSounds) do
+    PrecacheAsset(tauntSound)
+end
+
 --buy medpack stuff, Nin's patch for SiegeSimple
 local medpackHealthSound = PrecacheAsset("sound/NS2.fev/marine/common/health")
 local medpackHealthRequest = PrecacheAsset("sound/NS2.fev/marine/voiceovers/medpack")
