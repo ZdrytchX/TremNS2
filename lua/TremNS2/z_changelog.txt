@@ -7,6 +7,7 @@ Boneshield up animation time 0.4 -> 10s
 1 frag value 100 -> 200 credits as those who do bad find it hard to recover
 Contamination Nerfed: 30 cyles of bile -> 16 cycles of bile
 Skulk footstep audio cue margine now at 80% full speed (was 99%)
+Buffed onos attack speed by 4%
 
 17-10-15
 Fixed alien taunt error
