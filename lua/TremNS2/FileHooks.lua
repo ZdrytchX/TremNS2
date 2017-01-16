@@ -87,6 +87,7 @@ ModLoader.SetupFileHook( "lua/Sentry.lua", "lua/TremNS2/Sentry.lua", "post" ) --
 --ModLoader.SetupFileHook( "lua/TargetCache.lua", "lua/TremNS2/TargetCache.lua", "post" ) --FIXME
 --for some fucking reason sentries don't have any physics whatsoever so i can't fix its angle problem yet
 ModLoader.SetupFileHook( "lua/ARC.lua", "lua/TremNS2/ARC.lua", "post" )
+ModLoader.SetupFileHook( "lua/CommAbilities/Alien/BoneWall.lua", "lua/TremNS2/CommAbilities/Alien/BoneWall.lua", "post" )
 
 --Autobuild for Marines FIXME
 --ModLoader.SetupFileHook( "lua/ConstructMixin.lua", "lua/TremNS2/ConstructMixin.lua", "post" )
