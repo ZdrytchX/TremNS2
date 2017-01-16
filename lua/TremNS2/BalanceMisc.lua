@@ -52,7 +52,7 @@ kHallucinationMaxHealth = 700
 kParasiteDuration = 44
 
 -- increases max speed by 1.5 m/s
-kCelerityAddSpeed = 1 --1.5
+kCelerityAddSpeed = 2 --1.5
 
 -- add delay between attacks equal to this value times the attack duration.  A value of 1 will half the effective attack speed.
 -- 'at max' refers to # of veils.  3 = max, 0 = no effect.
