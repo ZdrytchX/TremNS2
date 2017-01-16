@@ -69,9 +69,9 @@ function Onos:ModifyAttackSpeed(attackSpeedTable)
 
     local activeWeapon = self:GetActiveWeapon()
     if activeWeapon and activeWeapon:isa("Gore") and activeWeapon:GetAttackType() == Gore.kAttackType.Smash then
-        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 1.375
+        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 1.467--1.375
     else
-        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 0.75
+        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 0.8--0.75
     end
 
 end
