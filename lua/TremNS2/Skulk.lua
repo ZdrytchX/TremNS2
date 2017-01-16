@@ -71,7 +71,7 @@ function Skulk:OnInitialized()
 end]]
 
 function Skulk:GetPlayFootsteps()
-    return self:GetVelocityLength() > .99 and self:GetIsOnGround() and self:GetIsAlive() and not self.movementModiferState
+    return self:GetVelocityLength() > .8 and self:GetIsOnGround() and self:GetIsAlive() and not self.movementModiferState
 end--.75
 
 function Skulk:GetTriggerLandEffect()
