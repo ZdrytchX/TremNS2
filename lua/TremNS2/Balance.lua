@@ -241,7 +241,7 @@ kPlayerResPerInterval = 3 --0.125 	--'15' @ interval '5' works out to be 180c pe
 kKillTeamReward = 4 --tres awarded to the commander for team doing well
 
 --find enemy, gain their status worth instead of a fixed value of 175 for both onos and skulk. Conversion value respecting Tremulous: 200
-kPersonalResPerKill = 100--175
+kPersonalResPerKill = 200
 
 -- WEAPON DAMAGE
 -- MARINE DAMAGE
@@ -377,7 +377,7 @@ kBiteEnergyCost = 6 --5.85
 kLeapEnergyCost = 35 --45
 
 kParasiteDamage = 8 --10
---kParasiteDamageType = kDamageType.Normal
+kParasiteDamageType = kDamageType.Light --Normal
 kParasiteEnergyCost = 30 --30
 
 kXenocideDamage = 200
@@ -688,14 +688,14 @@ kRuptureEffectTime = 1.5
 kRuptureEffectDuration = 3
 kRuptureEffectRadius = 8.7
 
-kBoneWallCost = 3
-kBoneWallCooldown = 10
+kBoneWallCost = 10--3
+kBoneWallCooldown = 16--10
 
 kContaminationCost = 15--5
 kContaminationCooldown = 12--6 increase cooldown due to increased lifespan and encouraging camping
 kContaminationLifeSpan = 120 --20
 kContaminationBileInterval = 2
-kContaminationBileSpewCount = 30--3
+kContaminationBileSpewCount = 16--3
 
 
 -- 100% + X (increases by 66%, which is 10 second reduction over 15 seconds)
