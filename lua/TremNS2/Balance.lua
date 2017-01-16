@@ -394,7 +394,7 @@ kSpitDamage = 20 --30
 kBabblerDamage = 24 --8 --20
 kBabblerDamageType = kDamageType.Normal--kDamageType.Structural
 
-kBabblerCost = 200 --1
+kBabblerCost = 300 --1
 --kBabblerEggBuildTime = 6
 --kNumBabblerEggsPerGorge = 1
 kNumBabblersPerEgg = 6
