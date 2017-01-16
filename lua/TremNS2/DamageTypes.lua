@@ -34,4 +34,4 @@ kStructureLightHealthPerArmor = 9
 kStructureLightArmorUseFraction = 0.9
 
 -- deal only 33% of damage to friendlies
-kFriendlyFireScalar = 1--0.33
+kFriendlyFireScalar = 0.5--0.33
