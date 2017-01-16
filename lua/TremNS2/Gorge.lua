@@ -3,7 +3,7 @@ Gorge.kYExtents = 0.475
 
 --local kMass = 80
 --local kJumpHeight = 1.2
-local kStartSlideSpeed = 10
+local kStartSlideSpeed = 12
 --local kViewOffsetHeight = 0.6
 local kMaxGroundSpeed = 8--6
 local kMaxSlidingSpeed = 20--13
