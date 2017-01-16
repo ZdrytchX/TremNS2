@@ -14,7 +14,7 @@ kHealingClampReductionScalar = 0.2
 --Credit Conversion: 200c = 5 points
 --Also remember that the stuff are stacked except jetpack is its own class
 k1fragValue = 5
-kmaxfragValue = 40 --20
+kmaxfragValue = 4000 / kPersonalResPerKill --40 --20
 
 -- HEALTH AND ARMOR
 --Weapons and upgrades are added upon base value (e.g. shotgun = 3 + 5)
