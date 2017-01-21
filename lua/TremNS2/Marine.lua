@@ -131,6 +131,9 @@ function Marine:OnCreate()
     --self.medpackused = 0
 end
 
+function Marine:GetCrouchSpeedScalar()
+    return 0.25 --duckscale = 0.25, swimscale = 0.5
+end
 
 function Marine:GetGroundFriction()
     return 6

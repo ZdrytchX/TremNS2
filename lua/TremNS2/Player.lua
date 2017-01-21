@@ -4,7 +4,7 @@
 -- Spectator Player speeds
 Player.kWalkMaxSpeed = 10  -- 5 Four miles an hour = 6,437 meters/hour = 1.8 meters/second (increase for FPS tastes)
 -- Slow down players when crouching
-Player.kCrouchSpeedScalar = 0.25 --duckscale = 0.25, swimscale = 0.5
+Player.kCrouchSpeedScalar = 0.5 --duckscale = 0.25, swimscale = 0.5
 
 Player.kAcceleration = 100--40
 Player.kRunAcceleration = 120--100
