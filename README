@@ -1,28 +1,83 @@
- __________   _______      _________   ______      ______
-|___    ___| |   __   \   |    _____| |      \    /      |
-    |  |     |  |   \  |  |   |       |   |\  \  / /\    |
-    |  |     |  |___/ /   |   |_____  |   | \  \/  /  |  |
-    |  |     |   _   (    |    _____| |   |  |    |   |  |
-    |  |     |  |  \  \   |   |_____  |   |  |    |   |  |
-    |  |     |  |   \  \  |         | |   |   |  |    |  |
-    |__|     |__|    \__\ |_________| |___|   |__|    |__|
- _____    __        __________        _________
-|      \ |  |      /   _______\     /  _____   \
-|   |\  \|  |      \   \____        \_/     /  /
-|   | \     |       \_____   \            /  /
-|   |  \    |      ______/    \      ___/  /____
-|___|   \___|      \__________/     |___________|
+ __________   _______      _________     ___        ___
+|___    ___| |   __   \   |      ___|  /     \    /     \
+    |  |     |  |   \  |  |    /      |   |\  \  /  /|   |
+    |  |     |  |___/ /   |   |_____  |   | \  \/  / |   |
+    |  |     |   _   (    |    _____| |   |  | '' |  |   |
+    |  |     |  |  \  \   |   |_____  |   |  |    |  |   |
+    |  |     |  |   \  \  |         | |   |   |  |   |   |
+    |__|     |__|    \__\ |_________| |___|    \/    |___|
+ _____    __            __________             _________
+|      \ |  |          /   _______\          /  _____   \
+|   |\  \|  |          \   \____             \_/     /  /
+|   | \     |           \_____   \                 /  /
+|   |  \    |          ______/    \           ___/  /____
+|___|   \___|          \__________/          |___________|
+Hex ID: 302b10bf
+http://steamcommunity.com/sharedfiles/filedetails/?id=808128703
 
 Natural Selection 2 Gameplay Modification with Quake 3 physics, Tremulous alike
 balancing, and various improvement to the stock NS2 gameplay mechanics.
 
-IRC:                  ZdrytchX;       #grangerhub @ irc.freenode.org
-Slack (GrangerHub):   ZdrytchX;       https://grangerhub.slack.com/
-Discord (GrangerHub): ViruS;          https://discord.gg/0nIuMmPMRjvmV7Qb
-Discord (NS2):        Frisqy.ViruS;   https://discord.gg/rCe9DZw
+Feel free to contribute to this project by creating issues, making pull requests
+for bug fixes and the alike. Just note that I do plan on keeping this as close
+as possible to Tremulous gameplay. I don't have any plans to make this a true
+successor to the Tremulous game due to UWE licensing selfishness (take a look
+at what happened to NS2: Combat) but if I do end up going far enough to consider
+the mod a standalone. I will likely choose one that will make this a free open
+sourced shooter. I'll need Timbo's permission if I want to go any further than
+that.
 
 Github:               https://github.com/ZdrytchX/TremNS2
 Google Sites:         https://sites.google.com/site/zdrytchx/home/ns2-motd
 Grangerhub Forums:    http://forum.grangerhub.com/t/tremns2-natural-selection-2-gameplay-mod/3144
 
 Actual Tremulous:     https://sites.google.com/site/zdrytchx/how-to/tremulous-install-for-newbies
+
+Contact:
+  IRC:                  ZdrytchX;       #grangerhub @ irc.freenode.org
+  Slack (GrangerHub):   ZdrytchX;       https://grangerhub.slack.com/
+  Discord (GrangerHub): ViruS;          https://discord.gg/0nIuMmPMRjvmV7Qb
+  Discord (NS2):        Frisqy.ViruS;   https://discord.gg/rCe9DZw
+  Forum (GrangerHub):   ViruS;          http://forum.grangerhub.com/
+
+Developers:
+  ZdrytchX:             One Man Team? *Shrugs*
+
+Contributors and Helpers (in order of Helpfulness):
+  Las
+  Brute
+  Wooza (Server Configuration)
+
+Other:
+  Nin (Fixed Timestep Movement mod)
+  twliteblue (Proof of Concept sticky Wallwalk, not actually implemented due to
+              it not performing well with stock NS2's wallwalk code)
+  Darklegion Developement (Original Tremulous game)
+
+___________________________________________________________________________
+     __         ________        ____         ______
+   /    \      |__    __|     /   __)      /  _____\
+  /  /\  \        |  |       |  /          \___    \
+ /  /==\  \   _   |  |  _    |  \___   _    ____\   \  _
+/__/    \__\ |_|  |__| |_|    \_____) |_|   \_______/ |_|
+Hex ID:30CED2A2 (Map Incomplete)
+http://steamcommunity.com/sharedfiles/filedetails/?id=818860706
+
+Advanced Tactical Combat Simulator (A.T.C.S./atcs) Recreation is a project of
+some sort to recreate A.T.C.S. from Tremulous into NS2 and TremNS2 and in the
+future, NS2: Combat.
+
+Original Map:
+  Nicolas "jex" Jansens
+
+Texture licenses CC-BY-NC-ND:
+  Yves "evil lair" Allaire
+  Simon "sock" O'calleghan
+  Nicolas "jex" Jansens
+
+Project Mappers:
+  ZdrytchX
+
+Helpers/Tutours:
+  BeigeAlert (Hidden Youtube Videos & Spark Creator Collective help)
+  Samoose
