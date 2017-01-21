@@ -103,6 +103,26 @@ function Exo:ModifyVelocity(input, velocity, deltaTime)
         end
 
     end
+    
+    if not self.onGround then
+
+      local lAirAcceleration = self:GetMaxSpeed()--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
+      local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
+
+      local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
+
+      local addspeedlimit = lAirAcceleration - wishDircurrentspeed
+      if addspeedlimit <= 0 then return end
+
+      accelerationIncrement = deltaTime * lAirAcceleration
+      if accelerationIncrement > addspeedlimit then accelerationIncrement = addspeedlimit end
+
+      --remove vertical speed
+      wishDir.y = 0
+      wishDir:Normalize()
+
+      velocity:Add(wishDir * accelerationIncrement)
+   end
 
 end
 
