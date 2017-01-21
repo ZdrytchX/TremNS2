@@ -132,7 +132,7 @@ function Marine:OnCreate()
 end
 
 function Marine:GetCrouchSpeedScalar()
-    return 0.25 --duckscale = 0.25, swimscale = 0.5
+    return 0.75 --duckscale = 0.25, swimscale = 0.5
 end
 
 function Marine:GetGroundFriction()

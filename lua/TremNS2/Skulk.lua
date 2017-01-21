@@ -83,6 +83,10 @@ function Skulk:GetCollisionSlowdownFraction()
     return 1--0.15
 end
 
+function Skulk:GetCrouchSpeedScalar()
+    return 0.5 --duckscale = 0.25, swimscale = 0.5
+end
+
 -- The Skulk movement should factor in the vertical velocity
 -- only when wall walking.
 function Skulk:GetMoveSpeedIs2D()
