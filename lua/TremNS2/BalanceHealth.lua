@@ -40,7 +40,7 @@ kMedpackExoUseCooldown = 20
 
 --Calculate values + armour minus 5 points for base reward
 --(weapon value + 160)/200 * 5 - 5
-kLayMinesPointValue = 7.5--2
+kLayMinesPointValue = 6--2
 kGrenadeLauncherPointValue = 14--20
 kShotgunPointValue = 3.75 --5 --3.75 desired but rewards too much with bots in particular
 kHeavyMachineGunValue = 9--5
