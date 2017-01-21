@@ -7,6 +7,7 @@ Alien healths Adjusted
 Alien evolution costs adjusted
 Skulk crouch speed corrected 0.75 -> 0.5
 Welder price increased back to 260 from 100
+Gave Exosuit something to accelerate in the air with
 
 17-10-16
 Boneshield duration 6 -> 300s (5 minutes)
