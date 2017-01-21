@@ -124,7 +124,7 @@ kFlamethrowerCost = 610
 kFlamethrowerDropCost = 45 --15
 
 --Wielder = painsaw ckit (temporary, prefer painsaw to take primary slot)
-kWelderCost = 100 --3 260 100c is too cheap considering how much armour you get for free, and it has such a long range in this game too
+kWelderCost = 260 --3 260 100c is too cheap considering how much armour you get for free, and it has such a long range in this game too
 kWelderDropCost = 10 --5
 
 --no such thing as a pulse/gas grenade in trem, make up values
