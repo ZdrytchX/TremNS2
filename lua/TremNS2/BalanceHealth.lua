@@ -48,11 +48,12 @@ kFlamethrowerPointValue = 10.25--7
 
 kMinigunPointValue = 10
 kRailgunPointValue = 8.75
---Health take one biomass
-kSkulkHealth = 23    kSkulkArmor = 0    kSkulkPointValue = 4.5--[[7]]     kSkulkHealthPerBioMass = 1
-kGorgeHealth = 69   kGorgeArmor = 0    kGorgePointValue = 6.25--[[10]]    kGorgeHealthPerBioMass = 3
+--Health take two biomass. Start health is at biomass level 1
+kSkulkHealth = 19    kSkulkArmor = 0    kSkulkPointValue = 4.5--[[7]]     kSkulkHealthPerBioMass = 3
+kGorgeHealth = 43   kGorgeArmor = 0    kGorgePointValue = 6.25--[[10]]    kGorgeHealthPerBioMass = 4
 kLerkHealth = 65    kLerkArmor = 0     kLerkPointValue = 7.5--[[15]]    kLerkHealthPerBioMass = 5
 kFadeHealth = 184    kFadeArmor = 0     kFadePointValue = 14--[[20]]    kFadeHealthPerBioMass = 8
+--Onos synced for 400hp @ biomass level 6. Avialable at level 4
 kOnosHealth = 275    kOnosArmor = 0   kOnosPointValue = 20--[[30]]      kOnosHealtPerBioMass = 25
 
 kMarineWeaponHealth = 100 --400

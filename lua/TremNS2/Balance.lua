@@ -200,9 +200,9 @@ kWhipCost = 8 --13
 --Remember the cap was increased to 2000 so 200 creds per evo
 kGorgeCost = 150 --8 --Gorge is special since its a builder so it'll have a mix of basilisk and granger stats
 kGorgeEggCost = 15 --15
-kLerkCost = 275--375 --18 --Lerk will have mara stats
+kLerkCost = 200--375 --18 --Lerk will have mara stats
 kLerkEggCost = 40 --30
-kFadeCost = 575 --35
+kFadeCost = 600 --35
 kFadeEggCost = 60 --70
 kOnosCost = 1000 --62
 kOnosEggCost = 100
@@ -210,7 +210,7 @@ kOnosEggCost = 100
 --these are also used for scores
 kSkulkUpgradeCost = 0--can be increased once marines buy their own armour
 kGorgeUpgradeCost = 50
-kLerkUpgradeCost = 75
+kLerkUpgradeCost = 67
 kFadeUpgradeCost = 75
 kOnosUpgradeCost = 270	--4 evos upgrade for advance tyrant
 
