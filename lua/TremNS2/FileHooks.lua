@@ -29,6 +29,7 @@ ModLoader.SetupFileHook( "lua/Weapons/Alien/Gore.lua", "lua/TremNS2/Weapons/Gore
 
 ModLoader.SetupFileHook( "lua/Weapons/Alien/HealSprayMixin.lua", "lua/TremNS2/Weapons/HealSprayMixin.lua", "post" )
 ModLoader.SetupFileHook( "lua/Weapons/Babbler.lua", "lua/TremNS2/Babbler.lua", "post" )
+ModLoader.SetupFileHook( "lua/Whip_Server.lua", "lua/TremNS2/Whip_Server.lua", "post" )
 
 --Fade Shadowstep Fixup
 ModLoader.SetupFileHook( "lua/TechData.lua", "lua/TremNS2/TechData.lua", "post" )
