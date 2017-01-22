@@ -93,7 +93,7 @@ kARCRoboticsFactoryHealth = 200    kARCRoboticsFactoryArmor = 280    kARCRobotic
 kPrototypeLabHealth = 250    kPrototypeLabArmor = 250    kPrototypeLabPointValue = 15
 kInfantryPortalHealth = 310    kInfantryPortalArmor = 78    kInfantryPortalPointValue = 10
 kArmsLabHealth = 800    kArmsLabArmor = 900    kArmsLabPointValue = 25
-kSentryBatteryHealth = 750    kSentryBatteryArmor = 50    kSentryBatteryPointValue = 5
+kSentryBatteryHealth = 550    kSentryBatteryArmor = 150    kSentryBatteryPointValue = 5
 
 -- ALIEN STRUCTURES
 kHiveHealth = 750    kHiveArmor = 15    kHivePointValue = 30

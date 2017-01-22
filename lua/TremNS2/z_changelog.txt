@@ -1,5 +1,8 @@
 Changelog starts from the bottom with the date:16-12-17
 
+17-10-22
+Sentry battery health ratio: 750 / 50 -> 550 -> 150
+
 17-10-21
 Marine: Crouch movement adjusted accoridngly to tremulous stats: 0.5 -> 0.25
 Incrased brightness of flash again 12 -> 16 (RGB: 1/0/0/ -> 1/0.05/0)
@@ -8,6 +11,7 @@ Alien evolution costs adjusted
 Skulk crouch speed corrected 0.75 -> 0.5
 Welder price increased back to 260 from 100
 Gave Exosuit something to accelerate in the air with
+Steelcap Fixed Whip attack
 
 17-10-16
 Boneshield duration 6 -> 300s (5 minutes)
