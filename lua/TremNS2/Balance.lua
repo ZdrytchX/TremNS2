@@ -175,8 +175,9 @@ kPhaseGateCost = 10 --15 Teleporters weren't a thing in trem, but they were in k
 --Adjusted to fit with the armour upgrades
 kResearchBioMassOneCost = 10 --15
 kResearchBioMassTwoCost = 20 --20
-kBioMassTwoTime = 4
-kBioMassThreeTime = 6
+kBioMassOneTime =10
+kBioMassTwoTime = 30-- unused?
+kBioMassThreeTime = 60
 
 
 --Upgrades must total around 90 with the remaining abilities 60 tres
