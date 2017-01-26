@@ -212,7 +212,7 @@ kOnosEggCost = 100
 kSkulkUpgradeCost = 0--can be increased once marines buy their own armour
 kGorgeUpgradeCost = 50
 kLerkUpgradeCost = 67
-kFadeUpgradeCost = 75
+kFadeUpgradeCost = 100
 kOnosUpgradeCost = 270	--4 evos upgrade for advance tyrant
 
 --gorge stuff
@@ -249,7 +249,7 @@ kPersonalResPerKill = 200
 kRifleDamage = 5
 kRifleDamageType = kDamageType.Normal
 kRifleClipSize = 30
-kRifleMeleeDamage = 10 --10
+kRifleMeleeDamage = 8 --10
 kRifleMeleeDamageType = kDamageType.Normal
 kRifleSpread = Math.Radians(4)--Math.Radians(2.8)
 
@@ -261,13 +261,13 @@ kRifleSpread = Math.Radians(4)--Math.Radians(2.8)
 
 --LASGUN - HMG fires approx. 18/s so let's put the damage at 2 -> 50 DPS, which is close enough to 45 DPS
 --PULSERIFLE
-kHeavyMachineGunDamage = 5
+kHeavyMachineGunDamage = 9 --5
 kHeavyMachineGunDamageType = kDamageType.Normal--kDamageType.Puncture
-kHeavyMachineGunClipSize = 135 --125 9*75 = 5*135
+kHeavyMachineGunClipSize = 90 --125 9*75 = 5*135
 kHeavyMachineGunClipNum = 4 --4
 kHeavyMachineGunRange = 200
 --kHeavyMachineGunSecondaryRange = 1.1
-kHeavyMachineGunSpread = Math.Radians(8) --Math.Radians(4) --prifle has 0 but oh well --12 deg is chaingun
+kHeavyMachineGunSpread = Math.Radians(8) --Math.Radians(4) preferred 8  --prifle has 0 but oh well --12 deg is chaingun
 
 
 -- 10 bullets per second
@@ -280,14 +280,14 @@ kPistolSpread = Math.Radians(1) --0 --mathradians 0.4
 --Painsaw/Ckit KoRx Vampire Extreme Sudden Death style
 kWelderDamagePerSecond = 200--147 --30 200 DPS is kinda OP for this game, so i'll use GPP's value of 146.7 DPS
 kWelderDamageType = kDamageType.Flame --additional damage to structures
-kWelderFireDelay = 0.075 --0.2
+kWelderFireDelay = 0.05 --0.2 --GPP: 0.075 // reduced to 0.05 to reduce effectiveness against skulks and lerks and fades
 
 kSelfWeldAmount = 13 --5
 kPlayerArmorWeldRate = 40 --20
 kSelfHealWeldAmount = 11--6
 kPlayerHealWeldRate = 13
 
-kAxeDamage = 11 --25
+kAxeDamage = 8 --25
 kAxeDamageType = kDamageType.Structural
 
 --Lucifer Cannon
@@ -306,7 +306,7 @@ kShotgunBulletsPerShot = 14 --17 --8 max out at 17 shots since that's all that i
 kShotgunSpreadDistance = 8.5 --8.5 Gets used as z-axis value for spread vectors before normalization
 
 --FLAMETHROWER
-kFlamethrowerDamage = 20 --8 fires 10/sec or so
+kFlamethrowerDamage = 20 --8 fires 5/sec
 kFlameThrowerEnergyDamage = 3
 kBurnDamagePerSecond = 1
 kCompoundFireDamageDelay = 2
