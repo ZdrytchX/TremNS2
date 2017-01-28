@@ -5,7 +5,7 @@ StabBlink.cooldownInfluence = 0.5 -- 0 = no focus cooldown, 1 = same as kAttackD
 
 function StabBlink:GetMeleeBase()
     -- Width of box, height of box
-    return 0.2, 0.2--.7, 1.2
+    return 1, 1--0.2, 0.2--.7, 1.2
 end
 
 function StabBlink:DoAttack()

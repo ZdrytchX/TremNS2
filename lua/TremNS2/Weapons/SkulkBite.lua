@@ -3,7 +3,7 @@ local kRange = 1.9--1.42
 
 function BiteLeap:GetMeleeBase()
     -- Width of box, height of box
-    return 1.5,0.5--1.2, 1.2
+    return 1.5,0.375--1.2, 1.2
 end
 
 function BiteLeap:GetRange()

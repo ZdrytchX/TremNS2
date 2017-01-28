@@ -2,6 +2,13 @@ Changelog starts from the bottom with the date: 16-12-17
 
 17-01-28
 Increased the size of blood splatter effects on tne screen so they are more easily reacted to when hit by an enemy
+Welder damage decreased to GPP value, still keeps 1.1 range
+Increased widths to relate to 1.1 rather than GPP-1.1 fusion:
+  Skulk (Dretch) Parasite: 0.15->0.375, Bite: 0.5 -> 0.375 (height, width left as 1.5 due to lack of auto trigger function)
+  Gorge Spit (Granger): 0.15->0.25
+  Fade (Dragoon) Stab: 0.2, 2 -> 1, 1, Swipe: 0.35, 0.85 -> 1, 1
+  Onos (Tyrant) Gore: 1, 1.4 -> 1.25, 1.25
+
 
 17-01-27
 Welder attack rate increased, no overall damage change. Makes it a bit harder to kill skulks and lerks.

@@ -14,7 +14,7 @@ end
 
 function Gore:GetMeleeBase()
     -- Width of box, height of box
-    return 1, 1.4
+    return 1.25, 1.25--1, 1.4
 end
 
 -- checks in front of the onos in a radius for potential targets and returns the attack mode (randomized if no targets found)
