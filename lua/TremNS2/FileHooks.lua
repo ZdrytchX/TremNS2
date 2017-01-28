@@ -106,6 +106,8 @@ ModLoader.SetupFileHook( "lua/GUIFlamethrowerDisplay.lua", "lua/TremNS2/HUD/GUIF
 ModLoader.SetupFileHook( "lua/GUIEvemt.lua", "lua/TremNS2/HUD/GUIEvemt.lua", "post" )
 ModLoader.SetupFileHook( "lua/ConsoleCommands_Client.lua", "lua/TremNS2/HUD/ConsoleCommands_Client.lua", "post" )
 ModLoader.SetupFileHook( "lua/GUISpeedDebug.lua", "lua/TremNS2/HUD/GUISpeedDebug.lua", "post" )
+--ModLoader.SetupFileHook( "lua/Player_Client.lua", "lua/TremNS2/HUD/Player_Client.lua", "post" ) --blood
+ModLoader.SetupFileHook( "lua/GUIDamageIndicators.lua", "lua/TremNS2/HUD/GUIDamageIndicators.lua", "post" ) 
 
 --Sounds
 --ModLoader.SetupFileHook( "lua/DamageEffects.lua", "lua/TremNS2/Sound/DamageEffects.lua", "post" ) XXX
