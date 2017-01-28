@@ -278,7 +278,7 @@ kPistolClipSize = 7--99 --10
 kPistolSpread = Math.Radians(1) --0 --mathradians 0.4
 
 --Painsaw/Ckit KoRx Vampire Extreme Sudden Death style
-kWelderDamagePerSecond = 200--147 --30 200 DPS is kinda OP for this game, so i'll use GPP's value of 146.7 DPS
+kWelderDamagePerSecond = 147--147 --30 200 DPS is kinda OP for this game, so i'll use GPP's value of 146.7 DPS
 kWelderDamageType = kDamageType.Flame --additional damage to structures
 kWelderFireDelay = 0.05 --0.2 --GPP: 0.075 // reduced to 0.05 to reduce effectiveness against skulks and lerks and fades
 
