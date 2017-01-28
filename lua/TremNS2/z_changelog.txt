@@ -1,12 +1,15 @@
-Changelog starts from the bottom with the date:16-12-17
+Changelog starts from the bottom with the date: 16-12-17
 
-17-01-12
+17-01-28
+Increased the size of blood splatter effects on tne screen so they are more easily reacted to when hit by an enemy
+
+17-01-27
 Welder attack rate increased, no overall damage change. Makes it a bit harder to kill skulks and lerks.
 Fade upgrade cost 75 -> 100
 Rifle/Axe melee down to 8 damage
 Heavy Machinegun (actually, Light machinegun) changed to reflect upon the regular rifle's DPS: Instead of doing 135 bullets of 5 damage each, let's just try regular tremulous 9 damage of 75 bullets. Spread increased however,
 
-17-91-22
+17-01-22
 Sentry battery health ratio: 750 / 50 -> 550 -> 150
 
 17-01-21
