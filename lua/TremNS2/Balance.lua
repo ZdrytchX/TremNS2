@@ -110,7 +110,7 @@ kShotgunCost = 310 --20
 kShotgunDropCost = 15 --20
 --HMG is our lasgun
 kHeavyMachineGunCost = 560 --25
-kHeavyMachineGunDropCost = 25 --40
+kHeavyMachineGunDropCost = 40 --40
 --Grenades all price 2
 --A litte more expensive than tremulous becuase they explode upon impact
 kClusterGrenadeCost = 300
@@ -267,7 +267,7 @@ kHeavyMachineGunClipSize = 90 --125 9*75 = 5*135
 kHeavyMachineGunClipNum = 4 --4
 kHeavyMachineGunRange = 200
 --kHeavyMachineGunSecondaryRange = 1.1
-kHeavyMachineGunSpread = Math.Radians(8) --Math.Radians(4) preferred 8  --prifle has 0 but oh well --12 deg is chaingun
+kHeavyMachineGunSpread = Math.Radians(12) --Math.Radians(4) preferred 8  --prifle has 0 but oh well --12 deg is chaingun
 
 
 -- 10 bullets per second
