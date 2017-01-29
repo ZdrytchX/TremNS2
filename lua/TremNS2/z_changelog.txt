@@ -1,5 +1,8 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-01-29
+HMG spread increased
+
 17-01-28
 Increased the size of blood splatter effects on tne screen so they are more easily reacted to when hit by an enemy
 Welder damage decreased to GPP value, still keeps 1.1 range
