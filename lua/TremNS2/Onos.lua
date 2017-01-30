@@ -42,7 +42,7 @@ function Onos:GetAirControl()
 end
 
 function Onos:GetGroundFriction()
-    return 6
+    return 7.2 --6 * 1.2
 end
 
 function Onos:GetCrouchShrinkAmount()

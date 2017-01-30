@@ -17,6 +17,10 @@ Eggs per hatch 2 -> 5, cooldown 4 -> 8 seconds
 
 Structure maturation time increased of various structures, see github repository changes for this patch
 
+Ground Friction of all Alien Classes except lerk modified from 6 to 60% of their acceleration value
+Skulk sneak modifier 66% -> 50%
+
+Lerk Flight Physics changed, flies faster but stalls more easily
 
 17-01-29
 HMG spread increased

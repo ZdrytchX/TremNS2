@@ -12,7 +12,7 @@ local kLeapForce = 14--7.6
 --local kJumpWallFeelerSize = 0.1
 
 Skulk.kMaxSpeed = 13--7.25
-Skulk.kSneakSpeedModifier = 0.66
+Skulk.kSneakSpeedModifier = 0.5--0.66--walk speed, calculated gpp speed = 22.6 ups or 0.05 m/s
 
 local kMass = 45 -- ~100 pounds
 
@@ -82,10 +82,10 @@ end
 function Skulk:GetCollisionSlowdownFraction()
     return 1--0.15
 end
-
+--[[
 function Skulk:GetCrouchSpeedScalar()
     return 0.5 --duckscale = 0.25, swimscale = 0.5
-end
+end]]
 
 -- The Skulk movement should factor in the vertical velocity
 -- only when wall walking.
@@ -165,7 +165,7 @@ function Skulk:GetAirFriction()
 end
 
 function Skulk:GetGroundFriction()
-    return 6--11
+    return 8.4--11 --1.4 * 6 = 8.4
 end
 
 function Skulk:GetCanStep()

@@ -30,7 +30,7 @@ kAirStrafeMaxSpeed = 12.5--5.5
 local flying2DSound = PrecacheAsset("sound/NS2.fev/alien/lerk/flying")
 local flying3DSound = PrecacheAsset("sound/NS2.fev/alien/lerk/flying")
 
-local kGlideAccel = 0.25--6 you can set tihs negative to achieve thrust
+local kGlideAccel = 7--6 you can set tihs negative to achieve thrust --0.25
 Lerk.kFlapForce = 6--5
 Lerk.kFlapForceForward = 10--8.3
 Lerk.kFlapForceStrafe = 8--7
@@ -43,7 +43,7 @@ function Lerk:GetAirAcceleration()
 end
 --0.717 0.027
 function Lerk:GetAirFriction()
-    return 0.5 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.035--0.08 0.055 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.009
+    return 0.25 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.035--0.08 0.055 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.009
 end
 
 local function UpdateGlide(self, input, velocity, deltaTime)
@@ -68,11 +68,11 @@ local function UpdateGlide(self, input, velocity, deltaTime)
 
         -- when speed falls below 1, set horizontal speed to 1, and vertical speed to zero, but allow dive to regain speed
         --
-        if useSpeed < 4 then
+        if useSpeed < 12.5 then
           self.gliding = false
           self.glideAllowed = false
-          if useSpeed < 1 then
-            useSpeed = 1
+          if useSpeed < 12.5 then
+            useSpeed = 12.5
             local newY = math.min(wishDir.y, -1)
             wishDir.y = newY
             wishDir = GetNormalizedVector(wishDir)

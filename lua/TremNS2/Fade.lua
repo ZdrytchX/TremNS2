@@ -32,7 +32,7 @@ function Fade:GetAirFriction()
 end
 
 function Fade:GetGroundFriction()
-    return 6
+    return 6.6
 end
 function Fade:GetCollisionSlowdownFraction()
     return 0.05
