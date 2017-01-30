@@ -104,21 +104,21 @@ kLerkSporeShootRange = 10
 kNumGorgeTunnels = 2
 
 -- maturation time for alien buildings
-kHiveMaturationTime = 300--180
-kHarvesterMaturationTime = 150
-kWhipMaturationTime = 120
-kCragMaturationTime = 120
-kShiftMaturationTime = 90
-kShadeMaturationTime = 120
-kVeilMaturationTime = 60
-kSpurMaturationTime = 60
-kShellMaturationTime = 60
-kCystMaturationTime = 45
-kHydraMaturationTime = 140
-kEggMaturationTime = 100
+kHiveMaturationTime = 600--180 --300
+kHarvesterMaturationTime = 150 --150
+kWhipMaturationTime = 250--120
+kCragMaturationTime = 180--120
+kShiftMaturationTime = 120--90
+kShadeMaturationTime = 210--120
+kVeilMaturationTime = 150--60
+kSpurMaturationTime = 90--60
+kShellMaturationTime = 270--60
+kCystMaturationTime = 60--45
+kHydraMaturationTime = 60--140
+kEggMaturationTime = 60--100
 kTunnelEntranceMaturationTime = 35
 
-kNutrientMistMaturitySpeedup = 3--2
+kNutrientMistMaturitySpeedup = 5--2
 kNutrientMistAutobuildMultiplier = 2--1
 
 kMinBuildTimePerHealSpray = 0.9
@@ -144,10 +144,10 @@ kEchoRange = 20--8
 kSprayDouseOnFireChance = .5
 
 -- Players get energy back at this rate when on fire
-kOnFireEnergyRecuperationScalar = 1
+kOnFireEnergyRecuperationScalar = 0.75--1
 
 -- Players get energy back at this rate when electrified
-kElectrifiedEnergyRecuperationScalar = .7
+kElectrifiedEnergyRecuperationScalar = 0.5--.7
 
 -- Infestation
 kStructureInfestationRadius = 2
@@ -158,7 +158,7 @@ kMarineInfestationSpeedScalar = .5--.1
 kDamageVelocityScalar = 2.5
 
 -- Each upgrade costs this much extra evolution time
-kUpgradeGestationTime = 2
+kUpgradeGestationTime = 1--2
 
 -- Cyst parent ranges, how far a cyst can support another cyst
 --
@@ -176,11 +176,11 @@ kCystUnconnectedDamage = 3--12
 --kUpgradedJetpackUseFuelRate = .19
 kJetpackingAccel = 0.8
 kJetpackUseFuelRate = 0.3--.21
-kJetpackReplenishFuelRate = .11
+kJetpackReplenishFuelRate = 0.2--.11
 
 -- Mines
 kNumMines = 2
-kMineActiveTime = 1--4
+kMineActiveTime = 2--4
 kMineAlertTime = 5--8
 kMineDetonateRange = 5
 kMineTriggerRange = 4.5--1.5
@@ -205,8 +205,8 @@ kPlayerWeldRate = 30
 kStructureWeldRate = 60--90
 kDoorWeldTime = 15
 
-kHatchCooldown = 4
-kEggsPerHatch = 2
+kHatchCooldown = 8--4
+kEggsPerHatch = 5--2
 
 kAlienRegenerationTime = 1 --2
 
@@ -222,7 +222,7 @@ kAlienMinRegeneration = 3--6
 kAlienMaxRegeneration = 21--80
 
 -- when in combat self healing (innate healing or through upgrade) is multiplied with this value
-kAlienRegenerationCombatModifier = 0--0.5
+kAlienRegenerationCombatModifier = 0.5
 
 kAlienHealRateTimeLimit = 1
 kAlienHealRateLimit = 1000
@@ -230,7 +230,7 @@ kAlienHealRatePercentLimit = 2--1
 kAlienHealRateOverLimitReduction = 1
 kOnFireHealingScalar = 0.5
 -- Carries the umbra cloud for x additional seconds
-kUmbraRetainTime = 0.25
+kUmbraRetainTime = 2--0.25
 
 --Special Movement Ability energy costs
 kBellySlideCost = 25
@@ -269,10 +269,10 @@ kARCSupply = 20
 kSentrySupply = 8--10
 kRoboticsFactorySupply = 3--5
 kInfantryPortalSupply = 10--0
-kPhaseGateSupply = 0
+kPhaseGateSupply = 2--0
 
 kDrifterSupply = 2--10
 kWhipSupply = 6--5
 kCragSupply = 5
-kShadeSupply = 2--5
+kShadeSupply = 5--2
 kShiftSupply = 2--5
