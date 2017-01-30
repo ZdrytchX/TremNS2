@@ -94,7 +94,7 @@ kPrototypeLabCost = 10 --40
 kSentryCost = 8 --5
 kPowerNodeCost = 0
 kMACCost = 5
-kRoboticsFactoryCost = 10
+kRoboticsFactoryCost = 15
 kARCCost = 20 --10
 
 --Weapons
@@ -216,7 +216,7 @@ kFadeUpgradeCost = 100
 kOnosUpgradeCost = 270	--4 evos upgrade for advance tyrant
 
 --gorge stuff
-kHydraCost = 60 --3
+kHydraCost = 80 --3
 kClogCost = 8 --0
 kGorgeTunnelCost = 100 --3
 kGorgeTunnelBuildTime = 20 --10
@@ -441,10 +441,10 @@ kUmbraMinigunModifier = 0.5
 kUmbraRailgunModifier = 0.5
 
 --KoRx style marauder snipe
-kSpikeMaxDamage = 20 --7
-kSpikeMinDamage = 2 --7
+kSpikeMaxDamage = 15 --7
+kSpikeMinDamage = 4 --7
 kSpikeDamageType = kDamageType.Structural--Puncture
-kSpikeEnergyCost = 20 --1.4
+kSpikeEnergyCost = 15 --1.4
 kSpikesAttackDelay = 0.7 --unused
 kSpikeMinDamageRange = 40 --9
 kSpikeMaxDamageRange = 2
@@ -452,13 +452,13 @@ kSpikesRange = 50
 kSpikesPerShot = 1
 
 --Spores = KoRx style AIDS
-kSporesDamageType = kDamageType.Gas
-kSporesDustDamagePerSecond = 1 --15
+kSporesDamageType = kDamageType.Normal--kDamageType.Gas
+kSporesDustDamagePerSecond = 5 --15
 kSporesDustFireDelay = 1 --0.36
 kSporesMaxRange = 17 --3
 kSporesDustEnergyCost = 10 --27
 kSporesDustCloudRadius = 10 --4
-kSporesDustCloudLifetime = 30 --4
+kSporesDustCloudLifetime = 10 --4
 
 --FADE - Dragoon
 kSwipeDamageType = kDamageType.Puncture--kDamageType.StructuresOnlyLight
@@ -544,7 +544,7 @@ kGrenadeLauncherTechResearchTime = 2 --20
 kCommandStationBuildTime = 20 --15
 
 kSentryBuildTime = 8 --3 --10
-kSentryBatteryCost = 30--10
+kSentryBatteryCost = 25--10
 kSentryBatteryBuildTime = 20 --5
 
 kRoboticsFactoryBuildTime = 8
@@ -596,11 +596,11 @@ kShadeBuildTime = 9
 kHydraBuildTime = 13
 kCystBuildTime = 5
 
-kSkulkGestateTime = 1--3
-kGorgeGestateTime = 2--7
+kSkulkGestateTime = 0.1--3
+kGorgeGestateTime = 1--7
 kLerkGestateTime = 3--15
-kFadeGestateTime = 4--25
-kOnosGestateTime = 5--30
+kFadeGestateTime = 6--25
+kOnosGestateTime = 10--30
 
 kEggGestateTime = 5--45
 

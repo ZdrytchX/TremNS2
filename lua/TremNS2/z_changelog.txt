@@ -1,5 +1,18 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-01-30
+Various Balance changes:
+Sentry Battery 30 -> 25
+RoboFactory 10 -> 15
+
+Alien Egg Gestate Times modified
+
+Lerk Spores damage increased 1 -> 5, time 30 -> 10
+Spikes min damage 2 -> 4, max damage 20 -> 15
+Energy cost 20 -> 15
+
+
+
 17-01-29
 HMG spread increased
 
