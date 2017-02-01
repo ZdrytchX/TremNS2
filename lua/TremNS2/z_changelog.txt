@@ -4,7 +4,7 @@ Changelog starts from the bottom with the date: 16-12-17
 Attempted fix on Grenade Launcher knockback code
 Contamination bile frequency reduced due to it meaning certain death of a structure
 Lack of Exosuit Air Manouvrability Bug Reminder
-Minigun Spread increase test
+Minigun Spread Fixed
 
 17-01-30
 Various Balance changes:

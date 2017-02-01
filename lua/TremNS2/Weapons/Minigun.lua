@@ -3,9 +3,11 @@ local kOverheatedSoundName = PrecacheAsset("sound/NS2.fev/marine/heavy/overheate
 --Garbage Above
 
 local kMinigunSpread = Math.Radians(15)--Math.Radians(5)
+local kMinigunRange = 400
 
 local kHeatUpRate = 0.09--0.3 .05 = 20 seconds firing time
 local kCoolDownRate = 0.05 --0.4 --cooldown can be long because infinite ammo
+local kBulletSize = 0.03
 
 local kMinigunSpinupTime = 0.5
 --[[ doesn't work
@@ -152,7 +154,7 @@ function Minigun:ProcessMoveOnWeapon(player, input)
     end
 
 end
-
+--causes strange errors
 function Minigun:OnTag(tagName)
 
     PROFILE("Minigun:OnTag")
