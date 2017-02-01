@@ -32,15 +32,22 @@ if Server then
 
       -- Remove grenade and add firing player.
       table.removevalue(hitEntities, self)
+
+
 --FIXME: Does not apply to targets (Low Priority)
 --TODO: Let the client predict the explosions
     -- Knockback because UWE didn't have anything as simple as this fucker
       for i = 1, #hitEntities do
           local ltarget = hitEntities[i]
-          if ltarget:isa("Player") and ltarget:GetMass() then--Must ensure it is a player else getorigin() will fail
+          if ltarget:isa("Player") and ltarget:GetMass() then--Must ensure it is a player else getorigin() will fail... which for some reason, drifters and hive bypass check... #Wtf_UWEEY
             local origin = ltarget:GetOrigin()
             local originpush = Vector(origin) --speed up calcs a bit
             local selforigin =  self:GetOrigin() --speed up calcs a bit
+
+            --XXX Replacement function, can cause players to get stuck in vents but at least hives don't spam errors
+            --origin.y = origin.y + 0.001
+            --ltarget:SetOrigin(origin)
+            --XXX
 
             --increase upward mpush without increasing
             origin.y = origin.y +1.75--ltarget:GetEyePos()--TODO: normalise the vector and stuff so the actual radius for knockback doesn't change
@@ -63,18 +70,22 @@ if Server then
 
             local velocity = ltarget:GetVelocity() + offset * pushscale
                 ltarget:SetVelocity(velocity)
-
+------------------------------------------------
                 --FIXME: GetIsOnGround searches through hives somehow
+                --[[
             if ltarget:GetIsOnGround() then
               ltarget.onGround = false
-            end
+            end]]
+            -------- Replacement
+            if ltarget.DisableGroundMove then ltarget:DisableGroundMove(0.1) end
+---------------------------------------
 
             --FIXME doesn't work
             local lshooter = self:GetParentId()
             --local ltargetname
 
             if lshooter and ltarget:GetId() == lshooter then
-              ldamage = ldamage / 4
+              ldamage = ldamage * 0.05
             end
 
           end

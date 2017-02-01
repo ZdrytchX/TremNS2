@@ -1,5 +1,10 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-02-01
+Attempted fix on Grenade Launcher knockback code
+Contamination bile frequency reduced due to it meaning certain death of a structure
+Exosuit
+
 17-01-30
 Various Balance changes:
 Sentry Battery 30 -> 25
