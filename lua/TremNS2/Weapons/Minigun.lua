@@ -153,6 +153,18 @@ function Minigun:ProcessMoveOnWeapon(player, input)
 
 end
 
+function Minigun:OnTag(tagName)
+
+    PROFILE("Minigun:OnTag")
+
+    if self:GetIsLeftSlot() and tagName == "l_shoot" then
+        Shoot(self, true)
+    elseif not self:GetIsLeftSlot() and tagName == "r_shoot" then
+        Shoot(self, false)
+    end
+
+end
+
 --TODO Prevent the use of more than one gun...? Do we have better suggestions / solutions?
 --[[
 function Minigun:LockGun()
