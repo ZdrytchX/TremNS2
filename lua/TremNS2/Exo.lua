@@ -103,7 +103,7 @@ function Exo:ModifyVelocity(input, velocity, deltaTime)
         end
 
     end
-    
+    --FIXME doesn't wor
     if not self.onGround then
 
       local lAirAcceleration = self:GetMaxSpeed()--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
