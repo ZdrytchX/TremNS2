@@ -5,6 +5,8 @@ Attempted fix on Grenade Launcher knockback code
 Contamination bile frequency reduced due to it meaning certain death of a structure
 Lack of Exosuit Air Manouvrability Bug Reminder
 Minigun Spread Fixed
+Attempted Fix on Drifter AI
+Drifters now auto heal with craig hive, go invisible with shade hive (Tremulous had passive radar, NS2 doesn't have this feature and lack of scanning ability is a much need)
 
 17-01-30
 Various Balance changes:
