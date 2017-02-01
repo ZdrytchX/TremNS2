@@ -696,7 +696,7 @@ kContaminationCost = 15--5
 kContaminationCooldown = 12--6 increase cooldown due to increased lifespan and encouraging camping
 kContaminationLifeSpan = 120 --20
 kContaminationBileInterval = 2
-kContaminationBileSpewCount = 16--3
+kContaminationBileSpewCount = 3--3
 
 
 -- 100% + X (increases by 66%, which is 10 second reduction over 15 seconds)
