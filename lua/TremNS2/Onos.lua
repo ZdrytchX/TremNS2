@@ -1,5 +1,5 @@
 Onos.kJumpForce = 20
-Onos.kJumpVerticalVelocity = 8
+Onos.kJumpVerticalVelocity = 4.375--8
 
 Onos.kJumpRepeatTime = .25
 Onos.kViewOffsetHeight = 2.5
@@ -7,7 +7,7 @@ Onos.XExtents = .7
 Onos.YExtents = 1.2
 Onos.ZExtents = .4
 Onos.kMass = 453 -- Half a ton
-Onos.kJumpHeight = 1.15
+Onos.kJumpHeight = 0.56--1.15 --Tyrnat jumps 18.0625 units high
 
 -- triggered when the momentum value has changed by this amount (negative because we trigger the effect when the onos stops, not accelerates)
 Onos.kMomentumEffectTriggerDiff = 3
@@ -76,7 +76,7 @@ function Onos:ModifyAttackSpeed(attackSpeedTable)
 
 end
 
-function Fade:ModifyVelocity(input, velocity, deltaTime)
+function Onos:ModifyVelocity(input, velocity, deltaTime)
 if not self.onGround then
 
   --initialising
