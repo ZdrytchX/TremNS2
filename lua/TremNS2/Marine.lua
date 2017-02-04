@@ -213,10 +213,11 @@ function Marine:ModifyVelocity(input, velocity, deltaTime)
     --Air Strafe testing...
     if not self.onGround then
 
-
         --initialising
         local lAirAcceleration = self:GetMaxSpeed()--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
         local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
+        wishDir.y = 0
+        wishDir:Normalize()
 
         local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
 
@@ -225,10 +226,6 @@ function Marine:ModifyVelocity(input, velocity, deltaTime)
 
         accelerationIncrement = deltaTime * lAirAcceleration
         if accelerationIncrement > addspeedlimit then accelerationIncrement = addspeedlimit end
-
-        --remove vertical speed
-        wishDir.y = 0
-        wishDir:Normalize()
 
         velocity:Add(wishDir * accelerationIncrement)
         --Because fuck ns2 physics

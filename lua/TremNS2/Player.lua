@@ -51,15 +51,22 @@ function Player:ModifyVelocity(input, velocity, deltaTime)
     --Air Strafe testing...
     if not self.onGround then
 
-        local lAirAcceleration = self:GetMaxSpeed()--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
-        local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
-        local wishDirvelocity = velocity:DotProduct(wishDir) --current velocity along wishdir axis
-        local acceleration = Clamp(lAirAcceleration - wishDirvelocity, 0, lAirAcceleration)
-        --remove vertical speed
-        wishDir.y = 0
-        wishDir:Normalize()
+      --initialising
+      local lAirAcceleration = self:GetMaxSpeed()--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
+      local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
+      wishDir.y = 0
+      wishDir:Normalize()
 
-        velocity:Add(wishDir * acceleration * deltaTime)
+      local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
+
+      local addspeedlimit = lAirAcceleration - wishDircurrentspeed
+      if addspeedlimit <= 0 then return end
+
+      accelerationIncrement = deltaTime * lAirAcceleration
+      if accelerationIncrement > addspeedlimit then accelerationIncrement = addspeedlimit end
+
+      velocity:Add(wishDir * accelerationIncrement)
+      --Because fuck ns2 physics
 
     end
 
