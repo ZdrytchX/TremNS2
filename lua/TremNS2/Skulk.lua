@@ -108,7 +108,9 @@ function Skulk:ModifyVelocity(input, velocity, deltaTime)
       --initialisin
       local laccelmod = 1--acceleration value
       local lAirAcceleration = self:GetMaxSpeed()--maxSpeedTable.maxSpeed --accelerate to maximum speed in one second
-      local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector
+      local wishDir = self:GetViewCoords():TransformVector(input.move) --this is a unit vector      --remove vertical speed
+      wishDir.y = 0
+      wishDir:Normalize()
 
       local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
       --Q1 strafe check
@@ -122,10 +124,6 @@ function Skulk:ModifyVelocity(input, velocity, deltaTime)
 
       accelerationIncrement = laccelmod * deltaTime * lAirAcceleration
       if accelerationIncrement > addspeedlimit then accelerationIncrement = addspeedlimit end
-
-      --remove vertical speed
-      wishDir.y = 0
-      wishDir:Normalize()
 
       velocity:Add(wishDir * accelerationIncrement)
 
