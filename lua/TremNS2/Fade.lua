@@ -24,7 +24,7 @@ function Fade:GetGroundFriction()
 end
 
 function Fade:GetAirControl()
-    return 165 * self:GetMaxSpeed() / 10--40
+    return 0--165 * self:GetMaxSpeed() / 10--40
 end
 
 function Fade:GetAirFriction()
@@ -93,10 +93,10 @@ function Fade:ModifyVelocity(input, velocity, deltaTime)
 
       local wishDircurrentspeed = velocity:DotProduct(wishDir) --current velocity along wishdir axis
       --Q1 strafe check
-      if (input.move.x == 1 or input.move.x == -1) and (input.move.z == 0) then
-        laccelmod = 70
-        lAirAcceleration = lAirAcceleration * 0.1 --accel limit FIXME some weird shit goes on when forward/rear speed is below maxspeed and acts as if this doesnt exist
-      end
+      --if (input.move.x == 1 or input.move.x == -1) and (input.move.z == 0) then
+      --  laccelmod = 70
+      --  lAirAcceleration = lAirAcceleration * 0.1 --accel limit FIXME some weird shit goes on when forward/rear speed is below maxspeed and acts as if this doesnt exist
+      --end
 
       local addspeedlimit = lAirAcceleration - wishDircurrentspeed
       if addspeedlimit <= 0 then return end
