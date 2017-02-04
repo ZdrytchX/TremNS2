@@ -1,5 +1,9 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-02-04
+Fixed maxspeed air acceleration bug
+Removed air control from fade
+
 17-02-01
 Attempted fix on Grenade Launcher knockback code
 Contamination bile frequency reduced due to it meaning certain death of a structure
