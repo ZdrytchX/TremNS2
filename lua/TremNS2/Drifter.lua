@@ -2,13 +2,13 @@
 
 Drifter.kEnzymeRange = 30--22
 
-local kDrifterSelfOrderRange = 30--12
+local kDrifterSelfOrderRange = 24--12
 
 local kDrifterConstructSound = PrecacheAsset("sound/NS2.fev/alien/drifter/drift")
 local kDrifterMorphing = PrecacheAsset("sound/NS2.fev/alien/commander/drop_structure")
 
 local kDetectInterval = 0.5
-local kDetectRange = 1.5
+local kDetectRange = 8--1.5 --scan for enemie
 ---copy paste from originals onwards
 
 local function IsBeingGrown(self, target)
