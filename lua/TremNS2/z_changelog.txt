@@ -1,5 +1,8 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-02-06
+Lerk Stallspeed reduced for better handling
+
 17-02-04
 Fixed maxspeed air acceleration bug
 Removed air control from fade

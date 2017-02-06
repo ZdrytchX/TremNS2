@@ -25,7 +25,7 @@ local kJumpHeight = 1.5
 -- Lerks walk slowly to encourage flight
 local kMaxWalkSpeed = 6.25--2.8
 local kMaxSpeed = 25--12.5
-kAirStrafeMaxSpeed = 12.5--5.5
+kAirStrafeMaxSpeed = 6.25--5.5
 
 local flying2DSound = PrecacheAsset("sound/NS2.fev/alien/lerk/flying")
 local flying3DSound = PrecacheAsset("sound/NS2.fev/alien/lerk/flying")
@@ -35,7 +35,7 @@ Lerk.kFlapForce = 6--5
 Lerk.kFlapForceForward = 10--8.3
 Lerk.kFlapForceStrafe = 8--7
 
-Lerk.kGravity = -7
+Lerk.kGravity = -8 -- -7
 Lerk.kSwoopGravity = Lerk.kGravity * 3--6
 --12.5
 function Lerk:GetAirAcceleration()
@@ -68,11 +68,11 @@ local function UpdateGlide(self, input, velocity, deltaTime)
 
         -- when speed falls below 1, set horizontal speed to 1, and vertical speed to zero, but allow dive to regain speed
         --
-        if useSpeed < 12.5 then
+        if useSpeed < 6.25 then
           self.gliding = false
           self.glideAllowed = false
-          if useSpeed < 12.5 then
-            useSpeed = 12.5
+          if useSpeed < 3 then
+            useSpeed = 3
             local newY = math.min(wishDir.y, -1)
             wishDir.y = newY
             wishDir = GetNormalizedVector(wishDir)
