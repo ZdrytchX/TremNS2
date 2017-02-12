@@ -1,5 +1,10 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-02-12
+Energy weapons (lmg, grenade launcher) cost increased by 100 for battery pack assumtion since they already start with additional 50% clipsize
+Grenade Launcher fire animation time reduced so the reload is quicker
+PRes tickrate halved from 4 to 8 second intervals
+
 17-02-06
 Lerk Stallspeed reduced for better handling
 
