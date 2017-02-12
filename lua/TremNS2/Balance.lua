@@ -109,7 +109,7 @@ kGrenadeTechResearchTime = 45
 kShotgunCost = 310 --20
 kShotgunDropCost = 15 --20
 --HMG is our lasgun
-kHeavyMachineGunCost = 560 --25
+kHeavyMachineGunCost = 660 --25
 kHeavyMachineGunDropCost = 40 --40
 --Grenades all price 2
 --A litte more expensive than tremulous becuase they explode upon impact
@@ -117,7 +117,7 @@ kClusterGrenadeCost = 300
 kGasGrenadeCost = 200
 kPulseGrenadeCost = 150
 --GL is our luci cannon for now
-kGrenadeLauncherCost = 760
+kGrenadeLauncherCost = 860
 kGrenadeLauncherDropCost = 60 --20
 -- Was 12 creds, but is useful now
 kFlamethrowerCost = 610
@@ -233,8 +233,8 @@ kAlienInitialIndivRes = 0 --12
 kCommanderInitialIndivRes = 0
 kMaxPersonalResources = 2000
 --Resource Gain per RT
-kResourceTowerResourceInterval = 4 --6
-kTeamResourcePerTick = 0.5 --1 --0.2 works out to 12 res/min/RT, default was 10/min/RT, but since this will be a fast paced mod and games in tremulous usually stage up within minutes. GPP had 1 BP/8sec, while KoRx had 1 bp/2sec. I think 1bp/4sec is more logical, but this means this value will result in 60 res/min.
+kResourceTowerResourceInterval = 6 --6
+kTeamResourcePerTick = 1 --1 --0.2 works out to 12 res/min/RT, default was 10/min/RT, but since this will be a fast paced mod and games in tremulous usually stage up within minutes. GPP had 1 BP/8sec, while KoRx had 1 bp/2sec. I think 1bp/4sec is more logical, but this means this value will result in 60 res/min.
 
 kPlayerResPerInterval = 3 --0.125 	--'15' @ interval '5' works out to be 180c per minute per RT
 							--so 1 @ 1s interval = 60c per minute per RT
