@@ -32,7 +32,7 @@ kInfestationCorrodeDamagePerSecond = 5--30
 kGorgeArmorTunnelDamagePerSecond = 10
 
 --'Metal'/ bp
-kMaxSupply =300--200
+kMaxSupply = 200--200
 kSupplyPerTechpoint = 20
 
 -- used as fallback
@@ -95,7 +95,7 @@ kSentryCost = 8 --5
 kPowerNodeCost = 0
 kMACCost = 5
 kRoboticsFactoryCost = 15
-kARCCost = 20 --10
+kARCCost = 16 --10
 
 --Weapons
 --We'll use tremulous bank of 2000 instead of regular 100
@@ -298,7 +298,7 @@ kGrenadeLauncherGrenadeDamageRadius = 4.7 --4.8 4.7 = 150 units
 kGrenadeLifetime = 10 --2
 
 --Shotgun
-kShotgunFireRate = 1 --0.88
+kShotgunFireRate = 0.88
 kShotgunDamage = 4 --10 --7
 kShotgunDamageType = kDamageType.Normal
 kShotgunClipSize = 8 --6
@@ -352,7 +352,7 @@ kSentryAttackBaseROF = .15
 
 kSentryDamage = 6 --5
 
-kARCDamage = 60 --450 --was 70 in trmens2
+kARCDamage = 40 --450 --was 70 in trmens2
 kARCDamageType = kDamageType.Structural--kDamageType.Splash -- splash damage hits friendly arcs as well
 kARCRange = 20--26
 kARCMinRange = 2 --7
@@ -530,7 +530,7 @@ kRecycleTime = 5 --12
 kAdvancedArmoryResearchTime = 9 --90
 kWeaponsModuleAddonTime = 4 --40
 kPrototypeLabBuildTime = 13
---kArmsLabBuildTime = 17
+kArmsLabBuildTime = 17
 
 kExtractorBuildTime = 7--11
 
