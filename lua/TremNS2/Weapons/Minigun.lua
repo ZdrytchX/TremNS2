@@ -2,7 +2,7 @@ local kOverheatedSoundName = PrecacheAsset("sound/NS2.fev/marine/heavy/overheate
 
 --Garbage Above
 
-local kMinigunSpread = Math.Radians(15)--Math.Radians(5)
+local kMinigunSpread = Math.Radians(16)--Math.Radians(5)
 local kMinigunRange = 400
 
 local kHeatUpRate = 0.09--0.3 .05 = 20 seconds firing time
