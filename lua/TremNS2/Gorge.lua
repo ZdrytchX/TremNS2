@@ -38,6 +38,10 @@ function Gorge:GetGroundFriction()
 
 end
 
+function Gorge:GetMaxBackwardSpeedScalar()
+    return 0.8
+end
+
 function Gorge:GetAirControl()
     return 0--8--4 XXX TESTING strafe below XXX
 end

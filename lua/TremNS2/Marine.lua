@@ -45,14 +45,14 @@ Marine.kFindWeaponRange = 2
 Marine.kPickupWeaponTimeLimit = 1
 Marine.kPickupPriority = { [kTechId.Flamethrower] = 1, [kTechId.GrenadeLauncher] = 2, [kTechId.Shotgun] = 3 }
 
-Marine.kAcceleration = 10
-Marine.kSprintAcceleration = 12 -- 70
+Marine.kAcceleration = 100
+Marine.kSprintAcceleration = 120 -- 70
 Marine.kSprintInfestationAcceleration = 60
 
-Marine.kGroundFrictionForce = 10--16
+Marine.kGroundFrictionForce = 6--16
 
 Marine.kAirStrafeWeight = 2
---local   lJumpStaminaReduction = 4
+local   lJumpStaminaReduction = 2
 local   lJumpStaminaRequirement = 0.25
 
 --give self.medpackused
@@ -159,7 +159,7 @@ function Marine:OnJump()
 
     self:TriggerEffects("jump", {surface = self:GetMaterialBelowPlayer()})
     --take out some stamina FIXME
-    --self.timeSprintChange = self.timeSprintChange - lJumpStaminaReduction
+    self.timeSprintChange = self.timeSprintChange - lJumpStaminaReduction
 end
 
 function Marine:GetMaxSpeed(possible)
