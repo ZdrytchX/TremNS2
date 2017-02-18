@@ -53,8 +53,10 @@ function Exo:GetFuel()
         return Clamp(self.fuelAtChange + (Shared.GetTime() - self.timeFuelChanged) / kThrustersCooldownTime, 0, 1)
     end
 end
+
 --Jump
 local kUpVector = Vector(0, 1, 0)
+
 function Exo:ModifyVelocity(input, velocity, deltaTime)
 
     if self.thrustersActive then
@@ -235,57 +237,6 @@ function Exo:UpdateThrusters(input)
 
     if self.thrustersActive and self:GetFuel() == 0 then
         HandleThrusterEnd(self)
-    end
-
-end
-
-function Exo:ModifyVelocity(input, velocity, deltaTime)
-
-    if self.thrustersActive then
-
-        if self.thrusterMode == kExoThrusterMode.Vertical then
-
-            velocity:Add(kUpVector * kThrusterUpwardsAcceleration * deltaTime)
-            velocity.y = math.min(1.5, velocity.y)
-
-        else
-
-            input.move.y = 0
-
-            local maxSpeed,wishDir
-
-            maxSpeed = self:GetMaxSpeed() + kHorizontalThrusterAddSpeed
-
-            if self.thrusterMode == kExoThrusterMode.StrafeLeft then
-                input.move.x = -1
-            elseif self.thrusterMode == kExoThrusterMode.StrafeRight then
-                input.move.x = 1
-            elseif self.thrusterMode == kExoThrusterMode.DodgeBack then
-                -- strafe buttons should have less effect when going forwards/backwards, should be more based on your look direction
-                input.move.z = -2
-            else
-                -- strafe buttons should have less effect when going forwards/backwards, should be more based on your look direction
-                input.move.z = 2
-            end
-
-            wishDir = self:GetViewCoords():TransformVector( input.move )
-            wishDir.y = 0
-            wishDir:Normalize()
-
-            wishDir = wishDir * maxSpeed
-
-            -- force should help correct velocity towards wishDir, this makes turning more responsive
-            local forceDir = wishDir - velocity
-            local forceLength = forceDir:GetLengthXZ()
-            forceDir:Normalize()
-
-            local accelSpeed = kThrusterHorizontalAcceleration * deltaTime
-            accelSpeed = math.min(forceLength, accelSpeed)
-            velocity:Add(forceDir * accelSpeed)
-
-
-        end
-
     end
 
 end
