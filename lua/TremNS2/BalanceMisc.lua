@@ -63,7 +63,7 @@ kClogsPerHive = 10
 kNumWebsPerGorge = 3
 kCystInfestDuration = 37.5
 
-kSentriesPerBattery = 8--3
+kSentriesPerBattery = 10--3
 
 kStructureCircleRange = 5--4
 kInfantryPortalAttachRange = 40 --10
@@ -96,7 +96,7 @@ kRoboticsFactorEngagementDistance = 5
 kARCEngagementDistance = 2
 kSentryEngagementDistance = 2
 kPlayerEngagementDistance = 1
-kExoEngagementDistance = 1.5
+kExoEngagementDistance = 2
 kOnosEngagementDistance = 2
 kLerkSporeShootRange = 10
 
@@ -265,7 +265,7 @@ kMaxWebLength = 10--8
 --Metal stuff that limits per-map
 kMACSupply = 2--10
 kArmorySupply = 2--5
-kARCSupply = 20
+kARCSupply = 16
 kSentrySupply = 8--10
 kRoboticsFactorySupply = 3--5
 kInfantryPortalSupply = 10--0
