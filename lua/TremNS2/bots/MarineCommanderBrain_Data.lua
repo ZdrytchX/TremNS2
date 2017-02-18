@@ -26,7 +26,7 @@ kMarineComBrainActions =
     --Added:
     CreateBuildNearStationAction( kTechId.CommandStation  , "CommandStation"  , 3 , 1+math.random() ) ,
     --CreateBuildNearStationAction( kTechId.RoboticsFactory , "RoboticsFactory" , 1 , 0.1*math.random() ) ,
-    CreateBuildNearStationAction( kTechId.SentryBattery   , "SentryBattery"   , 1 , 1+math.random() ) ,
+    --CreateBuildNearStationAction( kTechId.SentryBattery   , "SentryBattery"   , 1 , 1+math.random() ) ,
     CreateBuildNearStationAction( kTechId.Sentry   , "Sentry"   , 8 , 0.1+math.random() ) ,
 
     -- Upgrades from structures
