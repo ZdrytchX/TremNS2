@@ -1,5 +1,26 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-02-18
+Fidling around with marine jump stamina (in tremulous, a human has 1000 max
+  stamina, recovers about 20/sec and jumping takes 25% stamina, with unable to
+  jump at lower than 50%. Blacks out at 25%)
+
+17-02-16
+Messing with the weapon information
+Marine ground friction reduced to 6 from 10
+Attemped fix at ground friction
+ARC balance changes:
+  Damage 60 -> 40
+  Cost 20 -> 16
+  Supply cost 20 -> 16
+Shotgun Fire Delay reverted back to ns2 defaults (1.00 0 -> 0.88 seconds)
+Max sentries per room 8 -> 10
+Minigun spread increased slightly
+Attempted fix on exosuit's inability to accelerate while "jumping"
+
+17-02-16
+Messing with the user interface text.
+
 17-02-12
 Energy weapons (lmg, grenade launcher) cost increased by 100 for battery pack assumtion since they already start with additional 50% clipsize
 Grenade Launcher fire animation time reduced so the reload is quicker
