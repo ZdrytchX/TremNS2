@@ -52,7 +52,7 @@ Marine.kSprintInfestationAcceleration = 60
 Marine.kGroundFrictionForce = 6--16
 
 Marine.kAirStrafeWeight = 2
-local   lJumpStaminaReduction = 2
+--local   lJumpStaminaReduction = 2
 local   lJumpStaminaRequirement = 0.25
 
 --give self.medpackused
@@ -159,7 +159,7 @@ function Marine:OnJump()
 
     self:TriggerEffects("jump", {surface = self:GetMaterialBelowPlayer()})
     --take out some stamina FIXME
-    self.timeSprintChange = self.timeSprintChange - lJumpStaminaReduction
+    --self:ReduceCurrentStamina()
 end
 
 function Marine:GetMaxSpeed(possible)
@@ -234,18 +234,6 @@ function Marine:ModifyVelocity(input, velocity, deltaTime)
 
 end
 
-
---FIXME
---[[
-function Marine:ModifyAttackSpeed(attackSpeedTable)
-
-    local activeWeapon = self:GetActiveWeapon()
-    if activeWeapon and activeWeapon:isa("GrenadeLauncher") then
-        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 2
-    end
-
-end
-]]
 --------------------------------------
 --Get Armour Levels to find out weapon costs somehow
 --for now i'll just copy paste the function here

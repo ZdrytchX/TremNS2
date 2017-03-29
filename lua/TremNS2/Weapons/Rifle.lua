@@ -6,6 +6,8 @@ function Rifle:GetSpread()
     return kRifleSpread
 end
 
+--FIXME
+--[[
 function Rifle:ModifyAttackSpeed(attackSpeedTable)
 
     local activeWeapon = self:GetActiveWeapon()
@@ -14,3 +16,4 @@ function Rifle:ModifyAttackSpeed(attackSpeedTable)
     end
 
 end
+--]]

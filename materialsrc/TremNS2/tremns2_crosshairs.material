@@ -1,0 +1,9 @@
+shader = "shaders/Model_emissive_alpha.surface_shader"
+albedoMap = "materials/TremNS2/tremns2_crosshairs.dds"
+specularMap = "materials/TremNS2/tremns2_crosshairs.dds"
+opacityMap = "materials/TremNS2/tremns2_crosshairs_o.dds"
+emissiveMap = "materials/TremNS2/tremns2_crosshairs.dds"
+normalMap = "materials/dev/dev_normal.dds"
+specularMap = "materials/dev/black.dds"
+
+surface = "thin_metal"

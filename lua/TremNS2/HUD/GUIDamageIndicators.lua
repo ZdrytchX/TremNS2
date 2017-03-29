@@ -30,7 +30,7 @@ local kDamageTextures =
 
 GUIDamageIndicators.kDamageIndicatorOffset = GUIScale(48)
 
-local kHitEffectSize = 1200--600 -- considers GUIScale already
+local kHitEffectSize = 1000--600 -- considers GUIScale already
 
 function GUIDamageIndicators:Initialize()
 
@@ -123,7 +123,7 @@ function GUIDamageIndicators:OnTakeDamage(position, rotation, hitType)
     hitEffect:SetTextureCoordinates(unpack(pixelCoords))
     hitEffect:SetLayer(0)
 
-    hitEffect:FadeOut(1.25, "FADEOUT_HITEFFECT", AnimateQuadratic, DestroyHitEffect)
+    hitEffect:FadeOut(2, "FADEOUT_HITEFFECT", AnimateQuadratic, DestroyHitEffect)--1.25
 
 end
 

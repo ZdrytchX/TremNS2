@@ -161,7 +161,7 @@ end
 local function HandleThrusterStart(self, thrusterMode)
 
     if thrusterMode == kExoThrusterMode.Vertical then
-        self:DisableGroundMove(0.5)
+        self:DisableGroundMove(0.5) --this is where the bhop bug originates haha
     end
 
     self:SetFuel( self:GetFuel() )

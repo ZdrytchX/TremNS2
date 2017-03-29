@@ -22,14 +22,14 @@ kInitialMACs = 1--0
 kMACConstructEfficacy = 1--.3
 kFlamethrowerAltTechResearchCost = 20
 --FOV can be increased by 20 by client settings
-kDefaultFov = 90
-kEmbryoFov = 130
-kSkulkFov = 120
-kGorgeFov = 75
-kLerkFov = 105
-kFadeFov = 100
-kOnosFov = 95
-kExoFov = 95
+kDefaultFov = 70
+kEmbryoFov = 110
+kSkulkFov = 120--120--140
+kGorgeFov = 60--80, 110
+kLerkFov = 100--105--basi 120, mara 90
+kFadeFov = 90--100--110
+kOnosFov = 70--95--100
+kExoFov = 90
 
 kNanoArmorHealPerSecond = 0.5
 
@@ -46,19 +46,19 @@ kElectrifiedDuration = 5
 
 kHallucinationHealthFraction = 0.25--0.20
 kHallucinationArmorFraction = 0
-kHallucinationMaxHealth = 700
+kHallucinationMaxHealth = 200
 
 -- set to -1 for no time limit
-kParasiteDuration = 44
+kParasiteDuration = 30--44
 
 -- increases max speed by 1.5 m/s
-kCelerityAddSpeed = 2 --1.5
+kCelerityAddSpeed = 1.5 --1.5
 
 -- add delay between attacks equal to this value times the attack duration.  A value of 1 will half the effective attack speed.
 -- 'at max' refers to # of veils.  3 = max, 0 = no effect.
 kFocusAttackSlowAtMax = 0.5
 
-kHydrasPerHive = 3
+kHydrasPerHive = 8
 kClogsPerHive = 10
 kNumWebsPerGorge = 3
 kCystInfestDuration = 37.5
@@ -95,7 +95,7 @@ kPhaseGateEngagementDistance = 2
 kRoboticsFactorEngagementDistance = 5
 kARCEngagementDistance = 2
 kSentryEngagementDistance = 2
-kPlayerEngagementDistance = 1
+kPlayerEngagementDistance = 1.5--1
 kExoEngagementDistance = 2
 kOnosEngagementDistance = 2
 kLerkSporeShootRange = 10
@@ -106,7 +106,7 @@ kNumGorgeTunnels = 2
 -- maturation time for alien buildings
 kHiveMaturationTime = 600--180 --300
 kHarvesterMaturationTime = 150 --150
-kWhipMaturationTime = 250--120
+kWhipMaturationTime = 15 --250--120
 kCragMaturationTime = 180--120
 kShiftMaturationTime = 120--90
 kShadeMaturationTime = 210--120
@@ -114,14 +114,14 @@ kVeilMaturationTime = 150--60
 kSpurMaturationTime = 90--60
 kShellMaturationTime = 270--60
 kCystMaturationTime = 60--45
-kHydraMaturationTime = 60--140
+kHydraMaturationTime = 300--140
 kEggMaturationTime = 60--100
 kTunnelEntranceMaturationTime = 35
 
 kNutrientMistMaturitySpeedup = 5--2
 kNutrientMistAutobuildMultiplier = 2--1
 
-kMinBuildTimePerHealSpray = 0.9
+kMinBuildTimePerHealSpray = 0.5
 kMaxBuildTimePerHealSpray = 1.8
 
 -- Scanner sweep
@@ -141,7 +141,7 @@ kEnergizeUpdateRate = 1
 
 kEchoRange = 20--8
 
-kSprayDouseOnFireChance = .5
+kSprayDouseOnFireChance = 0.125--.5
 
 -- Players get energy back at this rate when on fire
 kOnFireEnergyRecuperationScalar = 0.75--1
@@ -173,10 +173,9 @@ kCystRedeployRange = 7 -- distance from existing Cysts that will cause redeploym
 kCystUnconnectedDamage = 3--12
 
 -- Jetpack
---kUpgradedJetpackUseFuelRate = .19
-kJetpackingAccel = 0.8
-kJetpackUseFuelRate = 0.3--.21
-kJetpackReplenishFuelRate = 0.2--.11
+kJetpackingAccel = 0.2--0.8
+kJetpackUseFuelRate = 0.0625--0.3--.21
+kJetpackReplenishFuelRate = 0.125--0.2--.11
 
 -- Mines
 kNumMines = 2
@@ -217,7 +216,7 @@ kAlienMinInnateRegeneration = 1
 kAlienMaxInnateRegeneration = 14--20
 
 -- boosted regenreation assuming 3 shells
-kAlienRegenerationPercentage = 0.03
+kAlienRegenerationPercentage = 0.04
 kAlienMinRegeneration = 3--6
 kAlienMaxRegeneration = 21--80
 
@@ -234,7 +233,7 @@ kUmbraRetainTime = 2--0.25
 
 --Special Movement Ability energy costs
 kBellySlideCost = 25
-kLerkFlapEnergyCost = 4--3
+kLerkFlapEnergyCost = 4.5--3
 kFadeShadowStepCost = 10--11
 kChargeEnergyCost = 30 -- per second
 
@@ -265,7 +264,7 @@ kMaxWebLength = 10--8
 --Metal stuff that limits per-map
 kMACSupply = 2--10
 kArmorySupply = 2--5
-kARCSupply = 16
+kARCSupply = 10
 kSentrySupply = 8--10
 kRoboticsFactorySupply = 3--5
 kInfantryPortalSupply = 10--0

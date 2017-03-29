@@ -21,13 +21,14 @@ kMarineComBrainActions =
     CreateBuildNearStationAction( kTechId.Armory         , "Armory"         , 1 , 4 ),
     CreateBuildNearStationAction( kTechId.Observatory    , "Observatory"    , 1 , 3+math.random() ) ,
     --CreateBuildNearStationAction( kTechId.PhaseGate      , "PhaseGate"      , 1 , 1+math.random() ) ,-- this wasn't here
-    CreateBuildNearStationAction( kTechId.ArmsLab        , "ArmsLab"        , 1 , 3+math.random() ) ,
+    CreateBuildNearStationAction( kTechId.ArmsLab        , "ArmsLab"        , 1 , 3 + 2 * math.random() ) ,
     CreateBuildNearStationAction( kTechId.PrototypeLab   , "PrototypeLab"   , 1 , 2+math.random() ) ,
     --Added:
     CreateBuildNearStationAction( kTechId.CommandStation  , "CommandStation"  , 3 , 1+math.random() ) ,
     --CreateBuildNearStationAction( kTechId.RoboticsFactory , "RoboticsFactory" , 1 , 0.1*math.random() ) ,
     --CreateBuildNearStationAction( kTechId.SentryBattery   , "SentryBattery"   , 1 , 1+math.random() ) ,
     CreateBuildNearStationAction( kTechId.Sentry   , "Sentry"   , 8 , 0.1+math.random() ) ,
+    --CreateBuildNearStationAction( kTechId.MAC , "MAC" ,          2  , 1.0+math.random() ) ,
 
     -- Upgrades from structures
     CreateUpgradeStructureAction( kTechId.ShotgunTech           , 2.0 ) ,

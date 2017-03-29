@@ -1,8 +1,9 @@
 -- Players heal by base amount + percentage of max health
-local kHealPlayerPercent = 3
+local kHealPlayerPercent = 15--3
+local kHealStructurePercent = 10--3
 local kHealPlayersRawDivisionForTheFuckingOPGorgeHealSpray = 2
 
-local kRange = 3--6
+local kRange = 6 --otherwise cant reach ceiling structures tjat are placed b the gorge itself
 local kHealCylinderWidth = 3
 
 local kHealScoreAdded = 1--2
@@ -39,10 +40,12 @@ local function HealEntity(self, player, targetEntity)
 
     -- Heal structures by multiple of damage(so it doesn't take forever to heal hives, ala NS1)
     if GetReceivesStructuralDamage(targetEntity) then
-        health = kHealsprayDamage--60
-    -- Don't heal self at full rate - don't want Gorges to be too powerful. Same as NS1.
-    elseif targetEntity == player then
-        health = health * kHealspraySelf
+        health = 60--kHealsprayDamage * 2 + targetEntity:GetMaxHealth() * kHealStructurePercent / 100.0--60
+    end
+
+    if targetEntity == player then
+       health = health / 5
+   -- Don't heal self at full rate - don't want Gorges to be too powerful. Same as NS1.
     end
 
     local amountHealed = targetEntity:AddHealth(health, true, false, true, player)
@@ -155,7 +158,7 @@ local function GetEntitiesInCylinder(self, player, viewCoords, range, width)
 
             -- could perform a LOS check here or simply keeo the code a bit more tolerant. healspray is kinda gas and it would require complex calculations to make this check be exact
             if xyDistance <= width and zDistance >= 0 then
-              able.insertunique(ents, entity) --table.insert(ents, entity)
+                table.insert(ents, entity)
             end
 
         end
@@ -215,6 +218,40 @@ local function PerformHealSpray(self, player)
 
         end
 
+    end
+
+end
+
+function HealSprayMixin:OnTag(tagName)
+
+    PROFILE("HealSprayMixin:OnTag")
+
+    if self.secondaryAttacking and tagName == "heal" then
+
+        local player = self:GetParent()
+        if player and player:GetEnergy() >= self:GetSecondaryEnergyCost(player) then
+
+            PerformHealSpray(self, player)
+            player:DeductAbilityEnergy(self:GetSecondaryEnergyCost(player))
+
+            local effectCoords = Coords.GetLookIn(GetHealOrigin(self, player), player:GetViewCoords().zAxis)
+            player:TriggerEffects("heal_spray", { effecthostcoords = effectCoords })
+
+            self.lastSecondaryAttackTime = Shared.GetTime()
+
+        end
+
+    end
+
+end
+
+function HealSprayMixin:OnUpdateAnimationInput(modelMixin)
+
+    PROFILE("HealSprayMixin:OnUpdateAnimationInput")
+
+    local player = self:GetParent()
+    if player and self.secondaryAttacking and player:GetEnergy() >= self:GetSecondaryEnergyCost(player) or Shared.GetTime() - self.lastSecondaryAttackTime < 0.5 then
+        modelMixin:SetAnimationInput("activity", "secondary")
     end
 
 end

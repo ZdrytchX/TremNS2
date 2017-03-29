@@ -1,4 +1,4 @@
-local kLifeSpan = 300-- --6
+local kLifeSpan = 60-- --6
 
 local kMoveOffset = 4
 local kMoveDuration = 10--0.4

@@ -2,6 +2,9 @@ local kMaxSpeed = 11--6.2
 local kBlinkSpeed = 22--14
 local kBlinkAcceleration = 40--40 --before reaching blinkspeed
 local kBlinkAddAcceleration = 0.1 --1 after reaching blinkspeed
+--double of this value
+Fade.XZExtents = 0.9--0.5--0.4
+--Fade.YExtents = 1.05--0.65625--1.05
 --local kMetabolizeAnimationDelay = 0.65
 
 Fade.kShadowStepDuration = 0.4--0.25
@@ -10,6 +13,13 @@ Fade.kShadowStepDuration = 0.4--0.25
 local kMinEnterEtherealTime = 0.75--0.4
 
 --local kFadeGravityMod = 1.0
+
+function Fade:OnAdjustModelCoords(coords)
+  coords.xAxis = coords.xAxis * 1.3;
+  coords.yAxis = coords.yAxis * 1.3;--vert
+  coords.zAxis = coords.zAxis * 1.3;
+  return coords;
+end
 
 function Fade:GetPerformsVerticalMove()
     return self:GetIsBlinking()
@@ -158,7 +168,7 @@ function Fade:MovementModifierChanged(newMovementModifierState, input)
     end]]
     if newMovementModifierState then
         self:TriggerShadowStep(input.move)
-            end
+    end
 
 end
 --[[
@@ -267,7 +277,7 @@ function Fade:ModifyAttackSpeed(attackSpeedTable)
 
     local activeWeapon = self:GetWeapon(StabBlink.kMapName)--self:GetActiveWeapon()
     if activeWeapon then
-        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 0.8
+        attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 0.775
     end
 
 end

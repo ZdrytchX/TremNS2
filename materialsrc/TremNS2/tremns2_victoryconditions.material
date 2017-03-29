@@ -1,0 +1,9 @@
+shader = "shaders/Model_emissive_alpha.surface_shader"
+albedoMap = "materials/TremNS2/tremns2_victoryconditions.dds"
+specularMap = "materials/TremNS2/tremns2_victoryconditions.dds"
+opacityMap = "materials/TremNS2/tremns2_victoryconditions_o.dds"
+emissiveMap = "materials/TremNS2/tremns2_victoryconditions.dds"
+normalMap = "materials/dev/dev_normal.dds"
+specularMap = "materials/dev/black.dds"
+
+surface = "thin_metal"

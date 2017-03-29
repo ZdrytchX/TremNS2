@@ -3,9 +3,6 @@ Onos.kJumpVerticalVelocity = 4.375--8
 
 Onos.kJumpRepeatTime = .25
 Onos.kViewOffsetHeight = 2.5
-Onos.XExtents = .7
-Onos.YExtents = 1.2
-Onos.ZExtents = .4
 Onos.kMass = 453 -- Half a ton
 Onos.kJumpHeight = 0.56--1.15 --Tyrnat jumps 18.0625 units high
 
@@ -32,6 +29,11 @@ Onos.kStoopingCheckInterval = 0.3
 Onos.kStoopingAnimationSpeed = 2
 Onos.kYHeadExtents = 0.7
 Onos.kYHeadExtentsLowered = 0.0
+
+Onos.XExtents = 1.0--.7
+Onos.YExtents = 1.5--1.2
+Onos.ZExtents = 0.7--.4
+--Onos.YExtents = 1.05--0.65625--1.05
 
 function Onos:GetAcceleration()
     return 12--6.5

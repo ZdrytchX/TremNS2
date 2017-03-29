@@ -752,7 +752,7 @@ function AlienTeam:InitTechTree()
     self.techTree:AddBuildNode(kTechId.Cyst)
     self.techTree:AddBuildNode(kTechId.NutrientMist)
     self.techTree:AddBuildNode(kTechId.Rupture, kTechId.BioMassTwo)
-    self.techTree:AddBuildNode(kTechId.BoneWall, kTechId.BioMassThree)
+    self.techTree:AddBuildNode(kTechId.BoneWall, kTechId.BioMassTwo)
     self.techTree:AddBuildNode(kTechId.Contamination, kTechId.BioMassNine)
     self.techTree:AddAction(kTechId.SelectDrifter)
     self.techTree:AddAction(kTechId.SelectHallucinations, kTechId.ShadeHive)
@@ -804,17 +804,18 @@ function AlienTeam:InitTechTree()
     self.techTree:AddActivation(kTechId.WhipRoot)
 
     -- Tier 1 lifeforms
-    self.techTree:AddAction(kTechId.Skulk,                     kTechId.None,                kTechId.None)
-    self.techTree:AddAction(kTechId.Gorge,                     kTechId.None,                kTechId.None)
-    self.techTree:AddAction(kTechId.Lerk,                      kTechId.None,                kTechId.None)
-    self.techTree:AddAction(kTechId.Fade,                      kTechId.BioMassTwo,          kTechId.None)
+    --used to be all NONE but now requires a hive to evolve
+    self.techTree:AddAction(kTechId.Skulk,                     kTechId.BioMassOne,                kTechId.None)
+    self.techTree:AddAction(kTechId.Gorge,                     kTechId.BioMassOne,                kTechId.None)
+    self.techTree:AddAction(kTechId.Lerk,                      kTechId.BioMassTwo,                kTechId.None)
+    self.techTree:AddAction(kTechId.Fade,                      kTechId.BioMassThree,          kTechId.None)
     self.techTree:AddAction(kTechId.Onos,                      kTechId.BioMassFour,         kTechId.None)
     self.techTree:AddBuyNode(kTechId.Egg,                      kTechId.None,                kTechId.None)
 
-    self.techTree:AddUpgradeNode(kTechId.GorgeEgg, kTechId.BioMassTwo)
-    self.techTree:AddUpgradeNode(kTechId.LerkEgg, kTechId.BioMassThree)
-    self.techTree:AddUpgradeNode(kTechId.FadeEgg, kTechId.BioMassSix)
-    self.techTree:AddUpgradeNode(kTechId.OnosEgg, kTechId.BioMassNine)
+    self.techTree:AddUpgradeNode(kTechId.GorgeEgg, kTechId.BioMassOne)
+    self.techTree:AddUpgradeNode(kTechId.LerkEgg, kTechId.BioMassTwo)
+    self.techTree:AddUpgradeNode(kTechId.FadeEgg, kTechId.BioMassThree)
+    self.techTree:AddUpgradeNode(kTechId.OnosEgg, kTechId.BioMassFour)
 
     -- Special alien structures. These tech nodes are modified at run-time, depending when they are built, so don't modify prereqs.
     self.techTree:AddBuildNode(kTechId.Crag,                      kTechId.Hive,          kTechId.None)
@@ -890,12 +891,12 @@ function AlienTeam:InitTechTree()
     self.techTree:AddResearchNode(kTechId.Xenocide,          kTechId.BioMassNine, kTechId.None, kTechId.AllAliens)
 
     -- gorge researches
-    self.techTree:AddBuyNode(kTechId.BabblerAbility,        kTechId.None)
+    self.techTree:AddBuyNode(kTechId.BabblerAbility,        kTechId.BioMassThree)--none
     self.techTree:AddPassive(kTechId.WebTech,            kTechId.None) --, kTechId.None, kTechId.AllAliens
     --FIXME Above still shows in Alien-Comm buttons/menu
     self.techTree:AddBuyNode(kTechId.Web,                   kTechId.None)
-    self.techTree:AddBuyNode(kTechId.BabblerEgg,            kTechId.None)
-    self.techTree:AddResearchNode(kTechId.BileBomb,         kTechId.BioMassThree, kTechId.None, kTechId.AllAliens)
+    self.techTree:AddBuyNode(kTechId.BabblerEgg,            kTechId.BioMassThree)
+    self.techTree:AddResearchNode(kTechId.BileBomb,         kTechId.BioMassFour, kTechId.None, kTechId.AllAliens)--three
 
     -- lerk researches
     self.techTree:AddResearchNode(kTechId.Umbra,               kTechId.BioMassSix, kTechId.None, kTechId.AllAliens)
@@ -910,8 +911,8 @@ function AlienTeam:InitTechTree()
 
     -- onos researches
     self.techTree:AddResearchNode(kTechId.Charge,            kTechId.BioMassSix, kTechId.None, kTechId.AllAliens)
-    self.techTree:AddResearchNode(kTechId.BoneShield,        kTechId.BioMassSeven, kTechId.None, kTechId.AllAliens)
-    self.techTree:AddResearchNode(kTechId.Stomp,             kTechId.BioMassEight, kTechId.None, kTechId.AllAliens)
+    self.techTree:AddResearchNode(kTechId.BoneShield,        kTechId.BioMassEight, kTechId.None, kTechId.AllAliens)
+    self.techTree:AddResearchNode(kTechId.Stomp,             kTechId.BioMassSeven, kTechId.None, kTechId.AllAliens)
 
     -- gorge structures
     self.techTree:AddBuildNode(kTechId.GorgeTunnel)

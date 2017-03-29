@@ -61,8 +61,8 @@ function MarineTeam:InitTechTree()
     self.techTree:AddResearchNode(kTechId.NanoArmor,              kTechId.None)
 
     self.techTree:AddResearchNode(kTechId.Weapons1,               kTechId.ArmsLab)
-    self.techTree:AddResearchNode(kTechId.Weapons2,               kTechId.Weapons1, kTechId.TwoCommandStations)
-    self.techTree:AddResearchNode(kTechId.Weapons3,               kTechId.Weapons2, kTechId.ThreeCommandStations)
+    self.techTree:AddResearchNode(kTechId.Weapons2,               kTechId.Weapons1, kTechId.None)
+    self.techTree:AddResearchNode(kTechId.Weapons3,               kTechId.Weapons2, kTechId.TwoCommandStations)
 
     -- Marine tier 2
     self.techTree:AddBuildNode(kTechId.AdvancedArmory,               kTechId.Armory,        kTechId.None)

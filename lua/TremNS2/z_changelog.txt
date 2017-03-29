@@ -1,5 +1,17 @@
 Changelog starts from the bottom with the date: 16-12-17
 
+17-02-19
+Reduced mature hive armour from 850 to 350 (cuts effective heatlh by 1/3rd)
+Max Hydras per player increased 3 -> 10
+Celerity bonus speed reduced back to 1.5 from 2 (too overpowered)
+Reduced Arms Lab build time 17 -> 14 seconds
+Reduced armor and health of various structures
+Medpack pickup delay increased so a player can't just sit on a pile of medpacks
+Kill Reward team res increased: 4 -> 6 res per kill
+Flamethrower cost: 610 -> 560
+LMG (Pulse Rifle) Cost: 660 -> 710
+Healspray: Vs self decreased; damage vs players increased to 40 from 20
+
 17-02-18
 Fidling around with marine jump stamina (in tremulous, a human has 1000 max
   stamina, recovers about 20/sec and jumping takes 25% stamina, with unable to

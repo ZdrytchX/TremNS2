@@ -80,12 +80,12 @@ function PointGiverMixin:GetPointValue()
     -- give additional points for enemies which got alot of score in their current life
     -- but don't give more than twice the default point value
     --*cough cough* UWE means that has earnt a lot of score i.e. valuable killer bonus?
-    --if HasMixin(self, "Scoring") then
+    if HasMixin(self, "Scoring") then
 
-        --local scoreGained = self:GetScoreGainedCurrentLife() or 0
-      --  points = points-- + scoreGained * 0.1--math.min(points, scoreGained * 0.01--[[0.1]])
+        local scoreGained = self:GetScoreGainedCurrentLife() or 0
+        points = points + math.min(math.max(scoreGained * 0.001 - 5, 0), points)--math.min(points, scoreGained * 0.01--[[0.1]])
 
-    --end
+    end
 
     if self:isa("Hive") then
         points = points + math.min((self:GetBioMassLevel() - 1) * kBioMassUpgradePointValue, 0)

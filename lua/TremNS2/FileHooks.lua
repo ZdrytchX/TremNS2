@@ -1,3 +1,34 @@
+--mod panel information
+if AddModPanel then
+  local tremns2_info = PrecacheAsset("materials/TremNS2/tremns2_info.material", "http://steamcommunity.com/sharedfiles/filedetails/?id=808128703")
+  local tremns2_fade = PrecacheAsset("materials/TremNS2/tremns2_fade.material", "https://sites.google.com/site/zdrytchx/home/ns2-motd")
+  local tremns2_speedo = PrecacheAsset("materials/TremNS2/tremns2_speedo.material")
+  local tremns2_strafe = PrecacheAsset("materials/TremNS2/tremns2_strafe.material", "https://www.youtube.com/watch?v=htQdjjfps8I")
+  local tremns2_ARC = PrecacheAsset("materials/TremNS2/tremns2_ARC.material")
+  local tremns2_gl = PrecacheAsset("materials/TremNS2/tremns2_gl.material")
+  local tremns2_victoryconditions = PrecacheAsset("materials/TremNS2/tremns2_victoryconditions.material")
+  local tremns2_shittybase = PrecacheAsset("materials/TremNS2/tremns2_shittybase.material", "https://www.youtube.com/watch?v=osxt9t0nTq4")
+  local tremns2_downloadtremulous = PrecacheAsset("materials/TremNS2/tremns2_downloadtremulous.material", "https://sites.google.com/site/zdrytchx/how-to/tremulous-install-for-newbies")
+  local tremns2_crosshairs = PrecacheAsset("materials/TremNS2/tremns2_crosshairs.material")
+  local tremns2_skulk = PrecacheAsset("materials/TremNS2/tremns2_skulk.material")
+  --local tremns2_gl = PrecacheAsset("materials/TremNS2/tremns2_gl.material")
+  --local tremns2_gl = PrecacheAsset("materials/TremNS2/tremns2_gl.material")
+
+  AddModPanel(tremns2_info, "http://steamcommunity.com/sharedfiles/filedetails/?id=808128703")
+  AddModPanel(tremns2_fade, "https://sites.google.com/site/zdrytchx/home/ns2-motd")
+  AddModPanel(tremns2_speedo)
+  AddModPanel(tremns2_strafe, "https://www.youtube.com/watch?v=htQdjjfps8I") --TODO: NEED A BETTER TUTORIAL
+  AddModPanel(tremns2_ARC)
+  AddModPanel(tremns2_gl)
+  AddModPanel(tremns2_victoryconditions)
+  AddModPanel(tremns2_shittybase, "https://www.youtube.com/watch?v=osxt9t0nTq4") --propaganda
+  AddModPanel(tremns2_downloadtremulous, "https://sites.google.com/site/zdrytchx/how-to/tremulous-install-for-newbies")
+  AddModPanel(tremns2_crosshairs)
+  AddModPanel(tremns2_skulk)
+  --AddModPanel(tremns2_gl)
+  --AddModPanel(tremns2_gl)
+end
+
 --core mixins
 ModLoader.SetupFileHook( "lua/Mixins/GroundMoveMixin.lua", "lua/TremNS2/core/GroundMoveMixin.lua", "post" )
 
@@ -16,6 +47,7 @@ ModLoader.SetupFileHook( "lua/Skulk.lua", "lua/TremNS2/Skulk.lua", "post" )
 ModLoader.SetupFileHook( "lua/Fade.lua", "lua/TremNS2/Fade.lua", "post" )
 ModLoader.SetupFileHook( "lua/Marine.lua", "lua/TremNS2/Marine.lua", "post" )
 ModLoader.SetupFileHook( "lua/SprintMixin.lua", "lua/TremNS2/SprintMixin.lua", "post" )
+ModLoader.SetupFileHook( "lua/JetpackMarine.lua", "lua/TremNS2/JetpackMarine.lua", "post" )
 
 ----------------------------------
 --Weapons
@@ -30,6 +62,9 @@ ModLoader.SetupFileHook( "lua/Weapons/Alien/Gore.lua", "lua/TremNS2/Weapons/Gore
 ModLoader.SetupFileHook( "lua/Weapons/Alien/HealSprayMixin.lua", "lua/TremNS2/Weapons/HealSprayMixin.lua", "post" )
 ModLoader.SetupFileHook( "lua/Weapons/Babbler.lua", "lua/TremNS2/Babbler.lua", "post" )
 ModLoader.SetupFileHook( "lua/Whip_Server.lua", "lua/TremNS2/Whip_Server.lua", "post" )
+
+--Give lerk spores poison effect
+ModLoader.SetupFileHook( "lua/Weapons/SporeCloud.lua", "lua/TremNS2/Weapons/SporeCloud.lua", "post" )
 
 --Fade Shadowstep Fixup
 ModLoader.SetupFileHook( "lua/TechData.lua", "lua/TremNS2/TechData.lua", "post" )
@@ -106,8 +141,8 @@ ModLoader.SetupFileHook( "lua/GUIFlamethrowerDisplay.lua", "lua/TremNS2/HUD/GUIF
 ModLoader.SetupFileHook( "lua/GUIEvemt.lua", "lua/TremNS2/HUD/GUIEvemt.lua", "post" )
 ModLoader.SetupFileHook( "lua/ConsoleCommands_Client.lua", "lua/TremNS2/HUD/ConsoleCommands_Client.lua", "post" )
 ModLoader.SetupFileHook( "lua/GUISpeedDebug.lua", "lua/TremNS2/HUD/GUISpeedDebug.lua", "post" )
---ModLoader.SetupFileHook( "lua/Player_Client.lua", "lua/TremNS2/HUD/Player_Client.lua", "post" ) --blood
-ModLoader.SetupFileHook( "lua/GUIDamageIndicators.lua", "lua/TremNS2/HUD/GUIDamageIndicators.lua", "post" ) 
+ModLoader.SetupFileHook( "lua/Player_Client.lua", "lua/TremNS2/HUD/Player_Client.lua", "post" ) --HUD
+ModLoader.SetupFileHook( "lua/GUIDamageIndicators.lua", "lua/TremNS2/HUD/GUIDamageIndicators.lua", "post" )
 
 --Sounds
 --ModLoader.SetupFileHook( "lua/DamageEffects.lua", "lua/TremNS2/Sound/DamageEffects.lua", "post" ) XXX

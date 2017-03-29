@@ -32,18 +32,18 @@ local flying3DSound = PrecacheAsset("sound/NS2.fev/alien/lerk/flying")
 
 local kGlideAccel = 7--6 you can set tihs negative to achieve thrust --0.25
 Lerk.kFlapForce = 6--5
-Lerk.kFlapForceForward = 10--8.3
+Lerk.kFlapForceForward = 12.5--8.3
 Lerk.kFlapForceStrafe = 8--7
 
-Lerk.kGravity = -8 -- -7
+Lerk.kGravity = -9.8 -- -7
 Lerk.kSwoopGravity = Lerk.kGravity * 3--6
 --12.5
 function Lerk:GetAirAcceleration()
-    return 12.5 +(GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 1--0
+    return 12.5 + (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 1--0
 end
 --0.717 0.027
 function Lerk:GetAirFriction()
-    return 0.25 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.035--0.08 0.055 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.009
+    return 0.22 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.035--0.08 0.055 - (GetHasCelerityUpgrade(self) and GetSpurLevel(self:GetTeamNumber()) or 0) * 0.009
 end
 
 local function UpdateGlide(self, input, velocity, deltaTime)

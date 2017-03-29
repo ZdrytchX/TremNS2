@@ -55,3 +55,52 @@ local function GetIsResearchRelevant(techId)
     return relevantResearchIds[techId]
 
 end
+
+--victory/win conditions
+function PlayingTeam:GetHasTeamLost()
+
+    PROFILE("PlayingTeam:GetHasTeamLost")
+
+    if GetGamerules():GetGameStarted() and not Shared.GetCheatsEnabled() then
+
+        -- Team can't respawn or last Command Station or Hive destroyed
+        local activePlayers = self:GetHasActivePlayers()
+        local abilityToRespawn = self:GetHasAbilityToRespawn()
+        local numAliveCommandStructures = self:GetNumAliveCommandStructures()
+
+        if numAliveCommandStructures == 0 then
+        --Bots don't log out at final destruction BUG
+            local teamInfo = GetTeamInfoEntity(self:GetTeamNumber())
+
+            if teamInfo:GetLastCommIsBot() then
+                for i = 1,2 do
+                    local bot = gServerBots[i]
+                    if bot and bot:GetPlayer():GetTeamNumber() == self:GetTeamNumber() then
+                        bot:Disconnect()
+                    end
+                end
+            end
+        end
+
+        --local numAliveCommandStructures = self:GetNumAliveCommandStructures()
+        --if (numAliveCommandStructures == 0) then
+      --    GetGamerules():LogoutCommanders()
+        --end
+--        -- logout commanders in Concede Sequence
+--        GetGamerules():LogoutCommanders()
+
+        --test for Have We Lost?
+        if  (not activePlayers and not abilityToRespawn) or
+            --(numAliveCommandStructures == 0) or --Allow the game to continue without a hive/CC
+            (self:GetNumPlayers() == 0) or
+            self:GetHasConceded() then
+
+            return true
+
+        end
+
+    end
+
+    return false
+
+end

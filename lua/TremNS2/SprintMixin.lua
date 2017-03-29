@@ -45,6 +45,12 @@ function SprintMixin:GetIsSprinting()
     return self.sprinting
 end
 
+--stamina jump
+function SprintMixin:ReduceCurrentStamina()
+    lJumpStaminaReduction = 4
+    self.sprintTimeOnChange = self.sprintTimeOnChange - lJumpStaminaReduction
+end
+
 function SprintMixin:GetSprintingScalar()
     return self.sprintingScalar
 end
@@ -186,6 +192,10 @@ function SprintMixin:GetSprintTime()
     local dt = Shared.GetTime() - self.timeSprintChange
     local rate = self.sprinting and -1 or SprintMixin.kSprintRecoveryRate
     return Clamp(self.sprintTimeOnChange + dt * rate , 0, SprintMixin.kMaxSprintTime)
+end
+
+function SprintMixin:GetCurrentStamina()
+    return self.timeSprintChange
 end
 
 function SprintMixin:GetTiredScalar()

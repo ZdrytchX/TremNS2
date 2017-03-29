@@ -1,6 +1,6 @@
 local kDownSlopeFactor = math.tan(math.rad(60))
 
-local kStepHeight = 0.5625 --0.5
+local kStepHeight = 0.5--0.5625 --0.5
 local kAirGroundTransistionTime = 0.2
 
 local kFallAccel = 0--0.34
@@ -14,6 +14,7 @@ local kMaxAirVeer = 1.3
 local kFixedTimeStep = 0.01 -- 100 fps
 -- min ~13 FPS assumed, otherwise players will move slower
 Print("Using Nin's FixedMovementStep: " .. kFixedTimeStep .. "s")
+Print("TremNS2 is being loaded")
 
 local kMaxDeltaTime = 0.07
 
@@ -249,8 +250,10 @@ local function Accelerate(self, input, velocity, deltaTime)
 
     local clampedAirSpeed = prevXZSpeed + deltaTime * kMaxAirAccel
     local clampSpeedXZ = math.max(self.onGround and maxSpeedTable.maxSpeed or clampedAirSpeed, prevXZSpeed)
---FIXME Apparently when jumping a class without air control gets a boost
-    --This iw where the air control is done i believe
+
+    ----------------------------
+    --AIR CONTROL--
+    ----------------------------
     if input.move.z == 1 and input.move.x == 0 and not self.onGround then
         ForwardControl(self, deltaTime, velocity)
     end
@@ -349,10 +352,11 @@ function GroundMoveMixin:GetFriction(input, velocity)
 
         frictionScalar = groundFriction * 10 --lmao
         frictionScalar = math.max(kStopFriction * self:GetAcceleration() / 10, frictionScalar)
-		
-		if velocity:GetLength() < kStopFriction then
-			frictionScalar = frictionScalar * 0.25
-		end
+
+        --incorrect but makeshift for the slow effect
+		    if velocity:GetLength() < kStopFriction then
+			     frictionScalar = frictionScalar * 0.25
+		    end
 
     end
 

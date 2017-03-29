@@ -5,7 +5,7 @@ function Welder:GetRange()
 end
 
 function Welder:GetMeleeBase()
-    return 0.1, 2
+    return 0.1, 0.5
 end
 
 function Welder:GetHUDSlot()

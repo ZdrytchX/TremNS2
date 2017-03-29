@@ -1,35 +1,11 @@
 --local kInfestationDecalSimpleMaterial = PrecacheAsset("materials/infestation/infestation_decal_simple.material")
 
-function GetSupplyUsedByTeam(teamNumber)
-
-    assert(teamNumber)
-
-    local supplyUsed = 0
-
-    if Server then
-        local team = GetGamerules():GetTeam(teamNumber)
-        if team and team.GetSupplyUsed then
-            supplyUsed = team:GetSupplyUsed()
-        end
-    else
-
-        local teamInfoEnt = GetTeamInfoEntity(teamNumber)
-        if teamInfoEnt and teamInfoEnt.GetSupplyUsed then
-            supplyUsed = teamInfoEnt:GetSupplyUsed()
-        end
-
-    end
-
-    return supplyUsed
-
-end
-
 function GetMaxSupplyForTeam(teamNumber)
 
-    return kMaxSupply
+    --return kMaxSupply
 
-    --[[ doesn't work apparently
-    local maxSupply = 0
+    --doesn't work apparently
+    local maxSupply = kMaxSupply
 
     if Server then
 
@@ -48,7 +24,7 @@ function GetMaxSupplyForTeam(teamNumber)
     end
 
     return maxSupply
-    --]]
+
 end
 
 function GetTexCoordsForTechId(techId)

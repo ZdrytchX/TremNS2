@@ -6,7 +6,7 @@ Gorge.kYExtents = 0.475
 local kStartSlideSpeed = 12
 --local kViewOffsetHeight = 0.6
 local kMaxGroundSpeed = 8--6
-local kMaxSlidingSpeed = 20--13
+local kMaxSlidingSpeed = 30--13
 --local kSlidingMoveInputScalar = 0.1
 --local kBuildingModeMovementScalar = 0.001
 --local kSlideCoolDown = 1.5
@@ -15,10 +15,21 @@ Gorge.kAirZMoveWeight = 2.5
 Gorge.kAirStrafeWeight = 2.5
 Gorge.kAirBrakeWeight = 0.1 --0.1
 
+--Gorge.XExtents = Gorge.XExtents * 1.2
+--Gorge.ZExtents = Gorge.ZExtents * 1.2
+--Gorge.YExtents = Gorge.YExtents * 1.2
+
 --local kGorgeLeanSpeed = 3
 
 Gorge.kBellyFriction = 0.1
-Gorge.kBellyFrictionOnInfestation = 0.02--0.068
+Gorge.kBellyFrictionOnInfestation = 0.03--0.068
+
+function Gorge:OnAdjustModelCoords(coords)
+  coords.xAxis = coords.xAxis * 1.2;
+  coords.yAxis = coords.yAxis * 1.2;--vert
+  coords.zAxis = coords.zAxis * 1.2;
+  return coords;
+end
 
 function Gorge:GetMaxSpeed(possible)
     return kMaxGroundSpeed

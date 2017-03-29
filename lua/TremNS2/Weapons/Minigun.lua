@@ -5,15 +5,13 @@ local kOverheatedSoundName = PrecacheAsset("sound/NS2.fev/marine/heavy/overheate
 local kMinigunSpread = Math.Radians(16)--Math.Radians(5)
 local kMinigunRange = 400
 
-local kHeatUpRate = 0.09--0.3 .05 = 20 seconds firing time
-local kCoolDownRate = 0.05 --0.4 --cooldown can be long because infinite ammo
+local kHeatUpRate = 0.045--0.3 .05 = 22.5 total seconds firing time
+local kCoolDownRate = 0.1 --0.4 --cooldown can be long because infinite ammo
+local kActiveGunCoolDownRate = 0.015 --used for when the gun is still active and hasn't overheated yet
 local kBulletSize = 0.03
 
+--unused anywhere / TODO
 local kMinigunSpinupTime = 0.5
---[[ doesn't work
-function Minigun:GetSpread()
-    return kMinigunSpread
-end]]
 
 -- TODO: we should use clip weapons provided functionality here (or create a more general solution which distincts between melee, hitscan and projectile only)!
 local function Shoot(self, leftSide)
@@ -122,7 +120,6 @@ function Minigun:OnCreate()
     self.shooting = false
     self.heatAmount = 0
     self.overheated = false
-    self.overheated = false
     self.timeOfLastShot = 0
 
     if Client then
@@ -134,7 +131,10 @@ end
 function Minigun:ProcessMoveOnWeapon(player, input)
 
     local dt = input.time
-    local addAmount = self.shooting and (dt * kHeatUpRate) or -(dt * kCoolDownRate)
+    local addAmount = self.shooting and (dt * kHeatUpRate) or -(dt * kActiveGunCoolDownRate)
+    --no idea how to add this into the above since it doesn't accept boolean
+    if self.overheated then addAmount = -(dt * kCoolDownRate) end
+
     self.heatAmount = math.min(1, math.max(0, self.heatAmount + addAmount))
 
     UpdateOverheated(self, player)
